@@ -37,11 +37,11 @@ export const InspirationSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-b from-transparent via-brand-sage-50/50 to-transparent dark:via-brand-darkBgSecondary/30" aria-labelledby="inspiration-heading">
+    <section className="py-6 sm:py-8 md:py-10 bg-gradient-to-b from-transparent via-brand-sage-50/50 to-transparent dark:via-brand-darkBgSecondary/30" aria-labelledby="inspiration-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center space-y-3 mb-8 sm:mb-12 md:mb-16">
+        <div className="max-w-2xl mx-auto text-center space-y-3 mb-5 sm:mb-8">
           <span className="text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary">
             Daily Foundations
           </span>

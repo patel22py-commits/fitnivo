@@ -27,7 +27,7 @@ export const DailyWellnessWidget: React.FC = () => {
   };
 
   return (
-    <section className="py-8 sm:py-12 md:py-16" aria-labelledby="interactive-wellness-heading">
+    <section className="py-6 sm:py-8 md:py-10" aria-labelledby="interactive-wellness-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl p-5 sm:p-8 md:p-12 bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft">
           

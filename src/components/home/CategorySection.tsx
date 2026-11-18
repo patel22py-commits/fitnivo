@@ -5,11 +5,11 @@ import { CATEGORIES } from '../../data/categories';
 
 export const CategorySection: React.FC = () => {
   return (
-    <section className="py-12 md:py-20" aria-labelledby="featured-categories-heading">
+    <section className="py-6 sm:py-8 md:py-10" aria-labelledby="featured-categories-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-5 sm:mb-8 gap-4">
           <div className="space-y-2">
             <span className="text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary flex items-center gap-1.5">
               <Heart className="w-3.5 h-3.5 text-brand-lightPrimary dark:text-brand-darkPrimary fill-current" />

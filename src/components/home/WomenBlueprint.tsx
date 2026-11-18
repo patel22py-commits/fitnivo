@@ -90,11 +90,11 @@ export const WomenDailyBlueprint: React.FC = () => {
   const Icon = current.icon;
 
   return (
-    <section className="py-12 sm:py-16 md:py-20" aria-labelledby="blueprint-heading">
+    <section className="py-6 sm:py-8 md:py-10" aria-labelledby="blueprint-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-12">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-5 sm:mb-8">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Circadian Rhythm Optimization</span>

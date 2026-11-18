@@ -103,7 +103,7 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
   return (
     <section
       aria-label="Newsletter Signup"
-      className={`relative overflow-hidden rounded-3xl p-8 sm:p-10 md:p-14 bg-gradient-to-br from-brand-sage-50 via-white to-brand-blush-50 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border border-brand-sage-200/70 dark:border-brand-sage-800/80 shadow-soft ${className}`}
+      className={`relative overflow-hidden rounded-3xl p-6 sm:p-8 md:p-10 bg-gradient-to-br from-brand-sage-50 via-white to-brand-blush-50 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border border-brand-sage-200/70 dark:border-brand-sage-800/80 shadow-soft ${className}`}
     >
       {/* Decorative leaf watermarks */}
       <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-brand-lightAccent/20 dark:bg-brand-sage-800/20 blur-2xl pointer-events-none" />

@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="space-y-6 sm:space-y-10">
+    <div className="space-y-0">
       {/* 1. Hero Section */}
       <HeroSection />
 
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
       <InspirationSection />
 
       {/* 6. Working Newsletter Community Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:pt-6 sm:pb-12">
         <NewsletterBox variant="banner" />
       </div>
     </div>

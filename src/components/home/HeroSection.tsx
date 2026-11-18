@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles, ShieldCheck, Heart } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden pt-4 pb-12 sm:pt-8 sm:pb-16 md:pt-14 md:pb-24">
+    <section className="relative overflow-hidden pt-2 pb-6 sm:pt-4 sm:pb-8 md:pt-6 md:pb-10">
       {/* Background romantic rose ambient glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[400px] bg-brand-blush-300/35 dark:bg-brand-sage-900/25 blur-3xl rounded-full pointer-events-none" />
       <div className="absolute top-8 right-6 w-48 sm:w-80 h-48 sm:h-80 bg-rose-200/40 dark:bg-brand-darkPrimary/15 blur-3xl rounded-full pointer-events-none" />

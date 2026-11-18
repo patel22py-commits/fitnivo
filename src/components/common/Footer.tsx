@@ -9,28 +9,28 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="mt-20 border-t border-brand-sage-200/70 dark:border-brand-sage-800 bg-[#F4F4EE] dark:bg-brand-darkBgSecondary text-brand-lightText dark:text-brand-darkText transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-brand-sage-200/60 dark:border-brand-sage-800/80">
+    <footer className="mt-16 sm:mt-20 border-t border-brand-sage-200/80 dark:border-brand-sage-800 bg-[#FDF0F3] dark:bg-brand-darkBgSecondary text-brand-lightText dark:text-brand-darkText transition-colors duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-24 lg:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-12 border-b border-brand-sage-200/70 dark:border-brand-sage-800/80">
           
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             <Logo size="lg" showTagline={true} />
-            <p className="text-sm text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed max-w-sm">
-              FITNIVO is an American women&apos;s wellness publication dedicated to evidence-informed health knowledge, sustainable fitness, nourishing recipes, and mindful daily self-care.
+            <p className="text-xs sm:text-sm text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed max-w-sm">
+              FITNIVO is an American women&apos;s wellness and lifestyle platform dedicated to evidence-informed health knowledge, sustainable fitness, nourishing recipes, and mindful daily self-care.
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
-              <span>Designed with care for women worldwide</span>
-              <Heart className="w-3.5 h-3.5 text-brand-lightAccent fill-current" />
+              <span>Designed with love for women worldwide</span>
+              <Heart className="w-3.5 h-3.5 text-brand-lightPrimary dark:text-brand-darkPrimary fill-current" />
             </div>
           </div>
 
           {/* Column 2: Explore (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-serif font-bold text-base text-brand-lightPrimary dark:text-brand-darkText">
-              Explore
+            <h4 className="font-serif font-bold text-sm sm:text-base text-brand-lightPrimary dark:text-brand-darkText">
+              Wellness Focus
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link to="/womens-health" className="text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors">
                   Women&apos;s Health
@@ -66,18 +66,18 @@ export const Footer: React.FC = () => {
 
           {/* Column 3: Company (3 cols) */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="font-serif font-bold text-base text-brand-lightPrimary dark:text-brand-darkText">
+            <h4 className="font-serif font-bold text-sm sm:text-base text-brand-lightPrimary dark:text-brand-darkText">
               Company &amp; Policies
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link to="/about" className="text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors">
-                  About Us
+                  About FITNIVO
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors">
-                  Contact
+                  Contact &amp; Press
                 </Link>
               </li>
               <li>
@@ -105,19 +105,19 @@ export const Footer: React.FC = () => {
 
           {/* Column 4: Follow Us (2 cols) */}
           <div className="lg:col-span-2 space-y-3">
-            <h4 className="font-serif font-bold text-base text-brand-lightPrimary dark:text-brand-darkText">
+            <h4 className="font-serif font-bold text-sm sm:text-base text-brand-lightPrimary dark:text-brand-darkText">
               Follow Us
             </h4>
             <p className="text-xs text-brand-sage-600 dark:text-brand-darkMuted">
-              Join our daily Pinterest community for meal guides, workout circuits, and wellness graphics.
+              Join our daily Pinterest &amp; Instagram wellness community for guides and mindful routines.
             </p>
-            <div className="flex flex-col gap-2.5 pt-1">
+            <div className="flex flex-col gap-2 pt-1">
               {/* Pinterest */}
               <a
                 href="https://www.pinterest.com/fitnivo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-[#E60023] hover:underline font-medium"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#E60023] hover:underline font-semibold"
               >
                 <span className="w-6 h-6 rounded-full bg-[#E60023]/10 flex items-center justify-center">
                   <svg className="w-3.5 h-3.5 fill-[#E60023]" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export const Footer: React.FC = () => {
                 href="https://www.instagram.com/fitnivo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-[#E4405F] hover:underline font-medium"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm text-[#E4405F] hover:underline font-semibold"
               >
                 <span className="w-6 h-6 rounded-full bg-[#E4405F]/10 flex items-center justify-center">
                   <svg className="w-3.5 h-3.5 fill-[#E4405F]" viewBox="0 0 24 24">
@@ -141,28 +141,13 @@ export const Footer: React.FC = () => {
                 </span>
                 <span>Instagram</span>
               </a>
-
-              {/* Facebook */}
-              <a
-                href="https://www.facebook.com/fitnivo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-[#1877F2] hover:underline font-medium"
-              >
-                <span className="w-6 h-6 rounded-full bg-[#1877F2]/10 flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 fill-[#1877F2]" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                </span>
-                <span>Facebook</span>
-              </a>
             </div>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
-          <div>
+        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
+          <div className="text-center md:text-left">
             <p>© 2026 FITNIVO. All Rights Reserved. Feel Better. Live Healthier.</p>
             <p className="mt-1 text-[11px] text-brand-sage-500">
               Content is reviewed for educational accuracy and does not substitute for personalized medical diagnosis or treatment.

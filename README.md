@@ -1,4 +1,4 @@
-# FITNIVO – Premium Women's Health & Wellness Website
+# FITNIVO – Premium Women's Health & Wellness Platform
 
 > **Feel Better. Live Healthier.**  
 > *Your Everyday Guide to Women's Wellness.*
@@ -7,92 +7,92 @@
 
 ## 🌸 Overview
 
-**FITNIVO** is a complete, modern, fully responsive women's health and wellness publication engineered to feel like a high-end American wellness magazine (inspired by modern editorial standards like *Well+Good*, *Mindbodygreen*, and *Women's Health*). 
+**FITNIVO** is a modern, fully responsive, mobile-first women's wellness and lifestyle web platform. Specially crafted with women's favorite romantic rose, peony, blush, and deep berry tones, FITNIVO provides an empowering, clean, and evidence-informed destination for women across the USA, Canada, the UK, Australia, and worldwide.
 
-Crafted with React 18, TypeScript, Vite, Tailwind CSS, Lucide icons, and React Router, FITNIVO provides an evidence-informed, responsible, and empowering destination for women across the USA, Canada, the UK, Australia, and worldwide.
+All generic blog posts have been replaced with **Interactive Wellness Pillars, Practical Daily Routines, Dynamic Calculators, and Habit Checklists**.
 
 ---
 
-## ✨ Key Features & Architecture
+## ✨ Design System (Women's Favorite Aesthetic)
 
-### 1. Brand Identity & Design System
-- **Minimal Wordmark & Leaf Emblem**: Bespoke botanical leaf mark paired with high-contrast serif typography.
+- **Brand Wordmark & Botanical Emblem**: Minimalist luxury wordmark with a soft botanical rose-leaf mark.
 - **Light Theme**:
-  - Background: `#FAFAF7`
-  - Primary: `#244E42` (Deep Forest Sage)
-  - Secondary: `#8AA995` (Soft Sage)
-  - Accent: `#E9BFA9` (Warm Blush / Terracotta)
-  - Text: `#202A26`
-  - Cards: `#FFFFFF` with soft drop shadows
+  - Background: `#FFF8F9` (Silky Rose Cream / Soft Ivory)
+  - Primary: `#A84860` (Elegant Rosewood / Deep Berry Wine)
+  - Secondary: `#D67990` (Soft Peony / Dusty Rose)
+  - Accent: `#F6BAC6` (Blush Champagne / Rose Quartz)
+  - Text: `#301A24` (Deep Espresso Plum)
+  - Cards: `#FFFFFF` with soft rose-tinted drop shadows
+  - Footer & Accents: `#FDF0F3`
 - **Dark Theme**:
-  - Background: `#101714` (Deep Night Botanical)
-  - Secondary Background: `#19231E`
-  - Cards: `#202C25`
-  - Primary Accent: `#91C5A7` (Luminescent Sage)
-  - Text: `#F5F7F4`
-  - Muted Text: `#AAB8AF`
+  - Background: `#160C12` (Deep Night Velvet Berry)
+  - Secondary Background: `#22131C` (Dark Mauve Velvet)
+  - Cards: `#2C1924` (Night Plum Card)
+  - Primary Accent: `#FCA5B9` (Luminous Rose Blush)
+  - Text: `#FFF0F4` (Pale Rose White)
+  - Muted Text: `#C4A9B3`
 - **Typography Hierarchy**:
-  - Headings: `Playfair Display` (Classic American Editorial Serif)
+  - Headings: `Playfair Display` (Warm Editorial Serif)
   - Body: `Inter` (Legible, modern sans-serif)
 
-### 2. Mandatory Dark Mode Functionality
-- Sun and moon icons with animated toggle in the navigation header.
-- Automatically detects user's system OS preference (`prefers-color-scheme`).
-- Persists user selection in `localStorage` (`fitnivo-theme`).
-- Zero unreadable text or raw white cards in dark mode.
+---
 
-### 3. Multi-Page Structure & Dedicated Routes
-- **`/` (Homepage)**:
-  - Hero with Playfair typography, CTA buttons ("Explore Wellness", "Discover Healthy Living"), and confident lifestyle visual.
-  - 6 Featured Category Cards with zoom effects.
-  - Trending Articles Editorial Grid with reading times and category pills.
-  - Interactive Daily Wellness Tool (Protein Target & Optimal Hydration calculator + 5-step daily ritual checklist).
-  - "Small Steps. Healthier You." Inspiration Section (Move Your Body, Nourish Yourself, Prioritize Self-Care).
-  - "Popular This Week" numbered magazine rankings.
-  - Working Newsletter signup with frequency choice (Weekly Sunday Edition vs. Daily Morning Bite).
-- **Dedicated Category Pages**:
-  - `/womens-health` – Hormonal balance, preventive care, and cycle knowledge.
-  - `/weight-loss` – Sustainable weight management without crash diets.
-  - `/nutrition` – High-protein breakfasts, balanced meal prep, and whole foods.
-  - `/fitness` – Home workouts, functional strength, and mobility routines.
-  - `/beauty` – Dermatologist-aligned barrier repair and sun protection.
-  - `/lifestyle` – Circadian light exposure, restorative sleep, and nervous system calm.
-  - Includes real-time keyword search inside category, tag filtering, and sorting.
-- **`/article/:slug` (Editorial Reading Experience)**:
-  - Reading time, publish/update dates, author credentials & avatar.
-  - Interactive jump-link Table of Contents.
-  - Pull quotes, callouts, and key takeaway summary cards.
-  - 2:3 vertical Pinterest Pin graphics with hover "Pin It" buttons.
-  - Social sharing (Pinterest, Facebook, X, and native Copy Link).
-  - Private bookmark / save article toggle with micro-confetti feedback.
-  - Visible medical disclaimer block on health and weight loss articles.
-- **`/search`**:
-  - Live query filtering by title, excerpt, content, and tags.
-  - Category pill filters and popular suggested search queries.
-  - Helpful empty state with reset suggestions.
-- **`/bookmarks`**:
-  - Dedicated personal reading list stored in browser `localStorage`.
-- **`/about`**:
-  - "Welcome to FITNIVO" – Brand mission, 6 core pillars, editorial values, and contributor team.
-- **`/contact`**:
-  - Validated contact form with topic selection, loading spinner, success feedback, and media headquarters information.
-- **Editorial & Compliance**:
-  - `/editorial-policy` – Sourcing standards (PubMed, NIH, ACOG) and author transparency.
-  - `/medical-disclaimer` – Formal clinical and emergency notice.
-  - `/privacy-policy` & `/terms` – Full legal policies.
-  - `404` NotFound fallback page.
+## 📱 Mobile-First Features & UX
 
-### 4. Pinterest Traffic Optimization
-- Built specifically for Pinterest discovery (the primary organic traffic driver for women's wellness).
-- 2:3 vertical Pin graphics (`800x1200` ratio) embedded in article reading templates.
-- One-click "Pin It" button integrated via Pinterest Web API.
-- OpenGraph and Twitter card meta tags in `index.html`.
+- **Thumb-Friendly Mobile Bottom Navigation Bar**:
+  - 🏠 **Home**
+  - 🌸 **Health**
+  - 🥗 **Nutrition**
+  - 💪 **Fitness**
+  - 🔍 **Search** (instant overlay search)
+  - 🌙/☀️ **Theme Toggle** (instant switch)
+- **Fluid Touch Targets**: Minimum 44x44px touch areas with smooth tap states.
+- **Zero Horizontal Overflow**: Guaranteed mobile viewport fit (`viewport-fit=cover`).
+- **Responsive Drawer**: Full-screen slide-down menu with category pills on mobile devices.
 
-### 5. SEO & Structured Data
-- Schema.org JSON-LD `Organization` markup in `index.html`.
-- Schema.org JSON-LD `BreadcrumbList` markup rendered dynamically in `Breadcrumbs.tsx`.
-- Schema.org JSON-LD `Article` structured data in `ArticlePage.tsx`.
-- `public/robots.txt` and `public/sitemap.xml` included.
+---
+
+## 🏛️ Platform Architecture & Features (Pure Wellness Hub)
+
+### 1. Homepage (`/`)
+- **Hero Section**: High-impact Playfair typography, romantic rose glows, mobile-first CTAs, and a confident lifestyle visual.
+- **6 Guided Wellness Pillars**:
+  1. *Women's Health* (Hormonal Balance, Cycle Harmony, Pelvic Floor)
+  2. *Weight Loss* (Sustainable Habits, Blood Sugar, Satiety Signaling)
+  3. *Nutrition & Diet* (Balanced Fuel Plate, Protein Anchoring, Hydration)
+  4. *Fitness & Exercise* (Home Strength, 20-Min Circuits, Mobility)
+  5. *Beauty & Skincare* (Barrier Repair, 365-Day SPF, Gentle Cleanse)
+  6. *Lifestyle & Wellness* (Circadian Sunlight, Restorative Sleep, Calm)
+- **Interactive Daily Nutrition Benchmark Calculator**:
+  - Body weight slider (90-260 lbs) + activity level toggle.
+  - Automatically calculates target protein grams and fluid ounces.
+  - Interactive 5-step daily ritual checklist with reset controls.
+- **Women's Daily Wellness Blueprint**:
+  - 🌅 *Morning Radiance (7:00 AM – 9:00 AM)*
+  - ☀️ *Midday Sustenance (12:00 PM – 2:00 PM)*
+  - 🌙 *Evening Restoration (8:30 PM – 10:30 PM)*
+- **Inspiration Section**: "Small Steps. Healthier You." (Move, Nourish, Prioritize).
+- **Weekly Wellness Newsletter Community**: Verified email subscription with frequency options and celebratory confetti.
+
+### 2. Dedicated Category Wellness Hubs
+- `/womens-health`, `/weight-loss`, `/nutrition`, `/fitness`, `/beauty`, `/lifestyle`
+- 4 Guided Pillars per category with expandable deep-dive cards:
+  - Evidence-informed summary
+  - 3-step action protocol
+  - Scientific rationale
+  - Editorial pro-tip
+- Category-specific interactive daily habit tracker.
+- Evidence-based FAQ accordion.
+- Visible medical disclaimer on health and weight loss hubs.
+
+### 3. Search System (`/search` & Modal Overlay)
+- Real-time search across all 24 guided pillars, action steps, and FAQs.
+- Category filters and popular search query pills.
+
+### 4. Company & Editorial Integrity
+- `/about` – Brand mission, 6 core pillars, and editorial philosophy.
+- `/contact` – Validated contact form with topic selection and feedback.
+- `/editorial-policy`, `/medical-disclaimer`, `/privacy-policy`, `/terms`.
 
 ---
 
@@ -102,28 +102,21 @@ Crafted with React 18, TypeScript, Vite, Tailwind CSS, Lucide icons, and React R
 # 1. Install dependencies
 npm install
 
-# 2. Start the development server
+# 2. Run Vite dev server
 npm run dev
 
 # 3. Build for production
 npm run build
 
-# 4. Preview production build
+# 4. Preview build
 npm run preview
 ```
 
 ---
 
-## 🚢 Deploying to Vercel
+## 🚢 Deployment (Vercel Ready)
 
-The repository is 100% turnkey for Vercel deployment:
-1. Push your repository to GitHub/GitLab.
-2. In Vercel, click **"Add New Project"** and import the repository.
-3. Framework Preset: **Vite**.
-4. Root Directory: `./` (or leave default).
-5. Build Command: `npm run build`
-6. Output Directory: `dist`
-7. Click **Deploy**. SPA routing rewrites are already configured via `vercel.json`.
+Turnkey configuration for Vercel with SPA client routing via `vercel.json`.
 
 ---
 

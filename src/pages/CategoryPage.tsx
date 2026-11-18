@@ -1,12 +1,19 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { CATEGORIES, getCategoryBySlug } from '../data/categories';
-import { ARTICLES, getArticlesByCategory } from '../data/articles';
-import { ArticleCard } from '../components/common/ArticleCard';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { MedicalDisclaimer } from '../components/common/MedicalDisclaimer';
-import { Search, Filter, Sparkles, BookOpen } from 'lucide-react';
 import { NewsletterBox } from '../components/common/NewsletterBox';
+import {
+  Sparkles,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  HelpCircle,
+  Lightbulb,
+  Heart,
+  RotateCcw
+} from 'lucide-react';
 
 interface CategoryPageProps {
   forcedSlug?: string;
@@ -17,95 +24,58 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
   const slug = forcedSlug || params.slug || 'womens-health';
 
   const category = getCategoryBySlug(slug) || CATEGORIES[0];
-  const allCategoryArticles = useMemo(() => getArticlesByCategory(category.slug), [category.slug]);
-
-  // Fallback if category has few articles: pull related articles from other categories to ensure a full grid
-  const displayArticlesList = useMemo(() => {
-    if (allCategoryArticles.length >= 4) return allCategoryArticles;
-    const additional = ARTICLES.filter((a) => a.categorySlug !== category.slug);
-    return [...allCategoryArticles, ...additional].slice(0, 6);
-  }, [allCategoryArticles, category.slug]);
-
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTag, setSelectedTag] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<'newest' | 'popular'>('newest');
-  const [visibleCount, setVisibleCount] = useState<number>(6);
+  const [checkedHabits, setCheckedHabits] = useState<string[]>([]);
+  const [expandedPillar, setExpandedPillar] = useState<string>(category.pillars[0]?.id || '');
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   useEffect(() => {
-    document.title = `${category.name} – FITNIVO | Women's Wellness & Health`;
+    document.title = `${category.name} – FITNIVO | Women's Wellness Platform`;
     window.scrollTo({ top: 0, behavior: 'instant' });
-    setSearchQuery('');
-    setSelectedTag('all');
-    setVisibleCount(6);
+    setExpandedPillar(category.pillars[0]?.id || '');
+    setCheckedHabits([]);
+    setExpandedFaq(0);
   }, [category]);
 
-  // Collect all unique tags for this category
-  const allTags = useMemo(() => {
-    const set = new Set<string>();
-    displayArticlesList.forEach((a) => a.tags.forEach((t) => set.add(t)));
-    return Array.from(set);
-  }, [displayArticlesList]);
+  const toggleHabit = (id: string) => {
+    setCheckedHabits((prev) =>
+      prev.includes(id) ? prev.filter((i) => i !== id) : [...prev, id]
+    );
+  };
 
-  // Filtered and sorted articles
-  const filteredArticles = useMemo(() => {
-    return displayArticlesList
-      .filter((art) => {
-        const matchesTag = selectedTag === 'all' || art.tags.includes(selectedTag);
-        const q = searchQuery.toLowerCase().trim();
-        const matchesQuery =
-          !q ||
-          art.title.toLowerCase().includes(q) ||
-          art.excerpt.toLowerCase().includes(q) ||
-          art.tags.some((t) => t.toLowerCase().includes(q));
-
-        return matchesTag && matchesQuery;
-      })
-      .sort((a, b) => {
-        if (sortBy === 'popular') {
-          return (b.popularWeekly || b.trending ? 1 : 0) - (a.popularWeekly || a.trending ? 1 : 0);
-        }
-        return 0; // default order
-      });
-  }, [displayArticlesList, selectedTag, searchQuery, sortBy]);
-
-  const visibleArticles = filteredArticles.slice(0, visibleCount);
-  const featuredArticle = displayArticlesList[0];
-  const remainingArticles = visibleArticles.filter((a) => a.id !== featuredArticle?.id);
+  const togglePillar = (id: string) => {
+    setExpandedPillar((prev) => (prev === id ? '' : id));
+  };
 
   return (
     <div className="min-h-screen pb-16">
       {/* Category Banner */}
-      <section className="relative overflow-hidden bg-brand-sage-50/70 dark:bg-brand-darkBgSecondary py-12 md:py-20 border-b border-brand-sage-200/60 dark:border-brand-sage-800">
+      <section className="relative overflow-hidden bg-brand-sage-50/80 dark:bg-brand-darkBgSecondary py-10 sm:py-16 md:py-20 border-b border-brand-sage-200/80 dark:border-brand-sage-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Breadcrumbs
-            items={[
-              { label: category.name }
-            ]}
-          />
+          <Breadcrumbs items={[{ label: category.name }]} />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4">
-            <div className="lg:col-span-8 space-y-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-3 sm:pt-6">
+            <div className="lg:col-span-8 space-y-4 text-center sm:text-left">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Wellness Department</span>
+                <Heart className="w-3.5 h-3.5 fill-current" />
+                <span>{category.badge}</span>
               </span>
 
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight">
+              <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight">
                 {category.name}
               </h1>
 
-              <p className="text-base sm:text-lg text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base md:text-lg text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed max-w-2xl mx-auto sm:mx-0">
                 {category.description}
               </p>
 
-              <p className="font-serif italic text-sm text-brand-sage-600 dark:text-brand-darkPrimary">
+              <p className="font-serif italic text-xs sm:text-sm text-brand-sage-600 dark:text-brand-darkPrimary">
                 &ldquo;{category.tagline}&rdquo;
               </p>
             </div>
 
             {/* Category Banner Visual Badge */}
-            <div className="lg:col-span-4 relative">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-soft-lg border-2 border-white dark:border-brand-darkCard">
+            <div className="lg:col-span-4 relative mt-2 lg:mt-0">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white dark:border-brand-darkCard bg-brand-sage-100">
                 <img
                   src={category.image}
                   alt={category.name}
@@ -117,160 +87,261 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 space-y-12 sm:space-y-16">
+        
         {/* Medical disclaimer note for health & weight management categories */}
         {(category.slug === 'womens-health' || category.slug === 'weight-loss') && (
-          <MedicalDisclaimer variant="compact" className="mb-8" />
+          <MedicalDisclaimer variant="compact" />
         )}
 
-        {/* Featured Lead Article for this Category */}
-        {featuredArticle && searchQuery === '' && selectedTag === 'all' && (
-          <div className="mb-12">
-            <div className="text-xs font-semibold uppercase tracking-widest text-brand-sage-500 dark:text-brand-darkMuted mb-3">
-              Featured in {category.name}
-            </div>
-            <ArticleCard article={featuredArticle} featured={true} />
+        {/* 1. Key Takeaways Summary Card */}
+        <section className="p-6 sm:p-8 rounded-3xl bg-brand-sage-50/80 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-4">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary">
+            <Sparkles className="w-4 h-4" />
+            <span>Core Takeaways for {category.name}</span>
           </div>
-        )}
-
-        {/* Filtering & Search Bar */}
-        <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
-          {/* Inner Search */}
-          <div className="relative flex-1 max-w-md">
-            <Search className="w-4 h-4 text-brand-sage-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder={`Search articles in ${category.name}...`}
-              className="w-full pl-10 pr-4 py-2 text-sm rounded-full bg-brand-sage-50 dark:bg-brand-darkBg text-brand-lightText dark:text-brand-darkText border border-brand-sage-200 dark:border-brand-sage-700 focus:outline-none focus:ring-1 focus:ring-brand-lightPrimary"
-            />
-          </div>
-
-          {/* Tags Filter */}
-          <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center gap-1 text-xs text-brand-sage-500 dark:text-brand-darkMuted mr-1">
-              <Filter className="w-3.5 h-3.5" />
-              <span>Tag:</span>
-            </div>
-            <button
-              onClick={() => setSelectedTag('all')}
-              className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                selectedTag === 'all'
-                  ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg'
-                  : 'bg-brand-sage-100 dark:bg-brand-sage-900/50 text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-200'
-              }`}
-            >
-              All
-            </button>
-            {allTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setSelectedTag(tag)}
-                className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
-                  selectedTag === tag
-                    ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg'
-                    : 'bg-brand-sage-100 dark:bg-brand-sage-900/50 text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-200'
-                }`}
-              >
-                {tag}
-              </button>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+            {category.takeaways.map((takeaway, i) => (
+              <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-brand-lightText/90 dark:text-brand-darkText">
+                <CheckCircle2 className="w-4 h-4 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0 mt-0.5" />
+                <span>{takeaway}</span>
+              </li>
             ))}
+          </ul>
+        </section>
+
+        {/* 2. The 4 Guided Wellness Pillars */}
+        <section className="space-y-6">
+          <div className="space-y-2">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary">
+              Evidence-Informed Framework
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-brand-lightText dark:text-brand-darkText">
+              The 4 Pillars of {category.name}
+            </h2>
+            <p className="text-xs sm:text-sm text-brand-lightText/70 dark:text-brand-darkMuted max-w-xl">
+              Tap any pillar below to explore the scientific rationale, recommended action steps, and daily tips.
+            </p>
           </div>
 
-          {/* Sort By */}
-          <div className="flex items-center gap-2 shrink-0">
-            <span className="text-xs text-brand-sage-500 dark:text-brand-darkMuted">Sort:</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as 'newest' | 'popular')}
-              className="py-1.5 px-3 text-xs rounded-xl bg-brand-sage-50 dark:bg-brand-darkBg text-brand-lightText dark:text-brand-darkText border border-brand-sage-200 dark:border-brand-sage-700 focus:outline-none"
-            >
-              <option value="newest">Latest Articles</option>
-              <option value="popular">Most Popular</option>
-            </select>
-          </div>
-        </div>
+          <div className="space-y-4">
+            {category.pillars.map((pillar, idx) => {
+              const isExpanded = expandedPillar === pillar.id;
 
-        {/* Article Grid */}
-        {filteredArticles.length > 0 ? (
-          <div className="space-y-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {(searchQuery !== '' || selectedTag !== 'all' ? visibleArticles : remainingArticles).map(
-                (article) => (
-                  <ArticleCard key={article.id} article={article} />
-                )
-              )}
-            </div>
-
-            {/* Load More Button */}
-            {visibleCount < filteredArticles.length && (
-              <div className="text-center pt-6">
-                <button
-                  onClick={() => setVisibleCount((prev) => prev + 6)}
-                  className="px-8 py-3.5 rounded-full bg-white dark:bg-brand-darkCard text-brand-lightPrimary dark:text-brand-darkPrimary border border-brand-sage-300 dark:border-brand-sage-700 font-semibold text-sm hover:bg-brand-sage-50 dark:hover:bg-brand-sage-900/50 transition-colors shadow-sm"
+              return (
+                <div
+                  key={pillar.id}
+                  className="rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft overflow-hidden transition-all duration-200"
                 >
-                  Load More Articles ({filteredArticles.length - visibleCount} remaining)
-                </button>
-              </div>
+                  <button
+                    type="button"
+                    onClick={() => togglePillar(pillar.id)}
+                    className="w-full p-5 sm:p-7 flex items-center justify-between text-left gap-4 hover:bg-brand-sage-50/50 dark:hover:bg-brand-darkBgSecondary/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-3.5 sm:gap-4">
+                      <span className="w-8 h-8 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900 text-brand-lightPrimary dark:text-brand-darkPrimary flex items-center justify-center font-bold text-xs shrink-0">
+                        0{idx + 1}
+                      </span>
+                      <div>
+                        <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary block">
+                          {pillar.badge}
+                        </span>
+                        <h3 className="font-serif text-lg sm:text-xl font-bold text-brand-lightText dark:text-brand-darkText">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-xs text-brand-lightText/70 dark:text-brand-darkMuted mt-0.5 line-clamp-1">
+                          {pillar.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="p-2 rounded-xl bg-brand-sage-100/60 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0">
+                      {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </div>
+                  </button>
+
+                  {isExpanded && (
+                    <div className="px-5 pb-6 sm:px-7 sm:pb-8 pt-2 space-y-5 border-t border-brand-sage-100 dark:border-brand-sage-800/60">
+                      <p className="text-xs sm:text-sm text-brand-lightText/85 dark:text-brand-darkMuted leading-relaxed">
+                        {pillar.summary}
+                      </p>
+
+                      {/* Action Steps */}
+                      <div className="space-y-2">
+                        <span className="text-xs font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary block">
+                          Recommended Action Protocol:
+                        </span>
+                        <div className="space-y-2">
+                          {pillar.actionSteps.map((step, sIdx) => (
+                            <div key={sIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-brand-lightText/80 dark:text-brand-darkText">
+                              <span className="w-1.5 h-1.5 rounded-full bg-brand-lightPrimary dark:bg-brand-darkPrimary mt-2 shrink-0" />
+                              <span>{step}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Scientific Rationale & Pro-tip */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                        <div className="p-4 rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary border border-brand-sage-200/60 dark:border-brand-sage-800/80 space-y-1">
+                          <span className="text-[10px] uppercase font-bold tracking-wider text-brand-sage-600 dark:text-brand-darkMuted block">
+                            Scientific Rationale
+                          </span>
+                          <p className="text-xs text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed">
+                            {pillar.scientificRationale}
+                          </p>
+                        </div>
+
+                        <div className="p-4 rounded-2xl bg-rose-50/70 dark:bg-rose-950/20 border border-rose-200/80 dark:border-rose-900/40 space-y-1">
+                          <div className="flex items-center gap-1.5 text-rose-800 dark:text-rose-300 font-bold text-[10px] uppercase tracking-wider">
+                            <Lightbulb className="w-3.5 h-3.5" />
+                            <span>Editorial Pro-Tip</span>
+                          </div>
+                          <p className="text-xs text-rose-950/80 dark:text-rose-200/80 leading-relaxed">
+                            {pillar.proTip}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* 3. Interactive Daily Habit Tracker for this Category */}
+        <section className="p-6 sm:p-8 md:p-10 rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary block">
+                Interactive Checklist
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
+                Daily {category.name} Habits
+              </h3>
+              <p className="text-xs text-brand-sage-600 dark:text-brand-darkMuted mt-0.5">
+                {checkedHabits.length} of {category.dailyChecklist.length} habits completed today
+              </p>
+            </div>
+            {checkedHabits.length > 0 && (
+              <button
+                onClick={() => setCheckedHabits([])}
+                className="inline-flex items-center gap-1 text-xs text-brand-sage-600 hover:text-brand-lightPrimary transition-colors p-2"
+                title="Reset checklist"
+              >
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Reset</span>
+              </button>
             )}
           </div>
-        ) : (
-          /* Empty Search Filter State */
-          <div className="py-16 text-center space-y-3 bg-white dark:bg-brand-darkCard rounded-3xl border border-brand-sage-200/80 dark:border-brand-sage-800 p-8">
-            <div className="w-12 h-12 mx-auto rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/50 flex items-center justify-center text-brand-sage-500">
-              <BookOpen className="w-6 h-6" />
-            </div>
-            <h3 className="font-serif text-xl font-bold text-brand-lightText dark:text-brand-darkText">
-              No matching articles found in {category.name}
-            </h3>
-            <p className="text-xs sm:text-sm text-brand-sage-500 dark:text-brand-darkMuted max-w-sm mx-auto">
-              Try adjusting your search terms or clearing your selected tag filter.
-            </p>
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedTag('all');
-                }}
-                className="text-xs font-semibold text-brand-lightPrimary dark:text-brand-darkPrimary underline"
-              >
-                Reset Filters
-              </button>
-            </div>
-          </div>
-        )}
 
-        {/* Explore Other Departments / Related Categories */}
-        <section className="mt-20 pt-12 border-t border-brand-sage-200/60 dark:border-brand-sage-800">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            {category.dailyChecklist.map((habit) => {
+              const done = checkedHabits.includes(habit.id);
+
+              return (
+                <div
+                  key={habit.id}
+                  onClick={() => toggleHabit(habit.id)}
+                  className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center justify-between select-none active:scale-[0.99] ${
+                    done
+                      ? 'bg-rose-50/80 dark:bg-rose-950/30 border-rose-200 dark:border-rose-900/60 text-rose-900 dark:text-rose-200'
+                      : 'bg-brand-sage-50/50 dark:bg-brand-darkBgSecondary/60 border-brand-sage-200/80 dark:border-brand-sage-800 text-brand-lightText dark:text-brand-darkText hover:border-brand-lightPrimary/50'
+                  }`}
+                >
+                  <div className="text-xs pr-2">
+                    <span className={`font-semibold block ${done ? 'line-through opacity-70' : ''}`}>
+                      {habit.title}
+                    </span>
+                    <span className="text-[11px] text-brand-sage-600 dark:text-brand-darkMuted">
+                      {habit.target}
+                    </span>
+                  </div>
+                  <div className="shrink-0">
+                    {done ? (
+                      <CheckCircle2 className="w-5 h-5 text-rose-600 dark:text-rose-400" />
+                    ) : (
+                      <div className="w-5 h-5 rounded-full border-2 border-brand-sage-300 dark:border-brand-sage-700" />
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* 4. Frequently Asked Questions */}
+        <section className="space-y-4">
+          <div className="space-y-1">
+            <span className="text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary flex items-center gap-1.5">
+              <HelpCircle className="w-3.5 h-3.5" />
+              <span>Evidence-Informed Answers</span>
+            </span>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-brand-lightText dark:text-brand-darkText">
+              Common Questions About {category.name}
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {category.faq.map((item, idx) => {
+              const isOpen = expandedFaq === idx;
+
+              return (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 overflow-hidden"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setExpandedFaq(isOpen ? null : idx)}
+                    className="w-full p-4 sm:p-5 flex items-center justify-between text-left gap-4 font-semibold text-sm sm:text-base text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-50/50 dark:hover:bg-brand-darkBgSecondary/50 transition-colors"
+                  >
+                    <span>{item.question}</span>
+                    <div className="p-1 rounded-lg text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0">
+                      {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                    </div>
+                  </button>
+                  {isOpen && (
+                    <div className="px-4 pb-5 sm:px-5 sm:pb-6 text-xs sm:text-sm text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed border-t border-brand-sage-100 dark:border-brand-sage-800/60 pt-3">
+                      {item.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* 5. Explore Other Departments */}
+        <section className="pt-8 border-t border-brand-sage-200/60 dark:border-brand-sage-800">
           <div className="mb-6 space-y-1">
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-sage-500 dark:text-brand-darkMuted">
-              Explore Other Wellness Pillars
+              Continue Your Wellness Journey
             </span>
-            <h3 className="font-serif text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
-              Related Categories
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
+              Other Wellness Pillars
             </h3>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             {CATEGORIES.filter((c) => c.slug !== category.slug).map((other) => (
               <Link
                 key={other.id}
                 to={`/${other.slug}`}
-                className="p-4 rounded-2xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/70 dark:border-brand-sage-800 hover:border-brand-lightPrimary/50 dark:hover:border-brand-darkPrimary/50 hover:shadow-soft transition-all group"
+                className="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/70 dark:border-brand-sage-800 hover:border-brand-lightPrimary/50 dark:hover:border-brand-darkPrimary/50 hover:shadow-soft transition-all group"
               >
-                <div className="aspect-[4/3] rounded-xl overflow-hidden mb-3 bg-brand-sage-100">
+                <div className="aspect-[4/3] rounded-xl overflow-hidden mb-2.5 bg-brand-sage-100">
                   <img
                     src={other.image}
                     alt={other.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <h4 className="font-serif font-bold text-sm text-brand-lightText dark:text-brand-darkText group-hover:text-brand-lightPrimary dark:group-hover:text-brand-darkPrimary transition-colors truncate">
+                <h4 className="font-serif font-bold text-xs sm:text-sm text-brand-lightText dark:text-brand-darkText group-hover:text-brand-lightPrimary dark:group-hover:text-brand-darkPrimary transition-colors truncate">
                   {other.name}
                 </h4>
-                <span className="text-[11px] text-brand-sage-500 dark:text-brand-darkMuted">
-                  {other.count} articles
+                <span className="text-[10px] text-brand-sage-500 dark:text-brand-darkMuted block">
+                  4 Guided Pillars
                 </span>
               </Link>
             ))}
@@ -278,9 +349,8 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
         </section>
 
         {/* Newsletter Box */}
-        <div className="mt-16">
-          <NewsletterBox variant="card" />
-        </div>
+        <NewsletterBox variant="card" />
+
       </div>
     </div>
   );

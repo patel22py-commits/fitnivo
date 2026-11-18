@@ -64,7 +64,7 @@ export const ContactPage: React.FC = () => {
           particleCount: 45,
           spread: 60,
           origin: { y: 0.6 },
-          colors: ['#244E42', '#8AA995', '#E9BFA9', '#91C5A7']
+          colors: ['#A84860', '#D67990', '#F6BAC6', '#FCA5B9', '#FFD1DC']
         });
       } catch {
         // fallback

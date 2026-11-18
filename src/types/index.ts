@@ -5,7 +5,34 @@ export interface Category {
   description: string;
   tagline: string;
   image: string;
-  count?: number;
+  badge?: string;
+  pillarsCount?: number;
+}
+
+export interface WellnessPillar {
+  id: string;
+  title: string;
+  subtitle: string;
+  badge: string;
+  summary: string;
+  actionSteps: string[];
+  scientificRationale: string;
+  proTip: string;
+}
+
+export interface WellnessHabit {
+  id: string;
+  title: string;
+  timing: 'morning' | 'afternoon' | 'evening' | 'daily';
+  target: string;
+  benefit: string;
+}
+
+export interface CategoryDetail extends Category {
+  pillars: WellnessPillar[];
+  dailyChecklist: WellnessHabit[];
+  faq: { question: string; answer: string }[];
+  takeaways: string[];
 }
 
 export interface Author {
@@ -13,50 +40,11 @@ export interface Author {
   role: string;
   avatar: string;
   bio: string;
-  reviewedBy?: string;
-  reviewerRole?: string;
-}
-
-export interface ArticleSection {
-  heading: string;
-  subheading?: string;
-  paragraphs: string[];
-  tips?: string[];
-  quote?: string;
-  callout?: {
-    title: string;
-    text: string;
-    type?: 'note' | 'tip' | 'warning';
-  };
-}
-
-export interface Article {
-  id: string;
-  slug: string;
-  title: string;
-  subtitle: string;
-  excerpt: string;
-  category: string;
-  categorySlug: string;
-  featuredImage: string;
-  pinterestImage: string; // 2:3 vertical aspect ratio image optimized for Pinterest Pinning
-  author: Author;
-  publishedDate: string;
-  updatedDate: string;
-  readingTime: string;
-  tags: string[];
-  trending?: boolean;
-  popularWeekly?: boolean;
-  featuredHero?: boolean;
-  medicalDisclaimerRequired?: boolean;
-  sections: ArticleSection[];
-  keyTakeaways: string[];
 }
 
 export interface NewsletterSubmission {
   email: string;
   frequency: 'weekly' | 'daily';
-  interests: string[];
 }
 
 export interface ContactSubmission {

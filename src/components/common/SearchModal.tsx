@@ -103,6 +103,21 @@ export const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => 
         className="w-full max-w-2xl bg-white dark:bg-brand-darkCard rounded-3xl shadow-2xl border border-brand-sage-200/80 dark:border-brand-sage-800 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Modal Top Header with Fitnivo Logo */}
+        <div className="flex items-center justify-between px-4 sm:px-6 py-2.5 bg-brand-sage-50/70 dark:bg-brand-darkBgSecondary/60 border-b border-brand-sage-100 dark:border-brand-sage-800">
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded-md bg-white dark:bg-white/95 p-0.5 flex items-center justify-center shadow-xs">
+              <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
+            </div>
+            <span className="text-xs font-serif font-bold text-brand-lightPrimary dark:text-brand-darkPrimary tracking-wider">
+              FITNIVO Wellness Hub Search
+            </span>
+          </div>
+          <span className="text-[10px] text-brand-sage-500 font-medium uppercase tracking-wider hidden sm:inline">
+            Press ESC to exit
+          </span>
+        </div>
+
         {/* Search Input Bar */}
         <div className="relative flex items-center p-4 sm:p-5 border-b border-brand-sage-100 dark:border-brand-sage-800">
           <Search className="w-5 h-5 text-brand-lightPrimary dark:text-brand-darkPrimary ml-2 shrink-0" />

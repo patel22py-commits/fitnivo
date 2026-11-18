@@ -75,12 +75,19 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
 
             {/* Category Banner Visual Badge */}
             <div className="lg:col-span-4 relative mt-2 lg:mt-0">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white dark:border-brand-darkCard bg-brand-sage-100">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-soft-lg border-4 border-white dark:border-brand-darkCard bg-brand-sage-100 relative">
                 <img
                   src={category.image}
                   alt={category.name}
                   className="w-full h-full object-cover"
                 />
+                {/* Brand Seal badge */}
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-xl bg-white/95 dark:bg-brand-darkCard/95 backdrop-blur-sm shadow-sm flex items-center gap-1.5 border border-brand-sage-200/60">
+                  <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-3.5 h-3.5 object-contain" />
+                  <span className="text-[10px] font-bold text-brand-lightPrimary dark:text-brand-darkPrimary">
+                    FITNIVO Guide
+                  </span>
+                </div>
               </div>
             </div>
           </div>

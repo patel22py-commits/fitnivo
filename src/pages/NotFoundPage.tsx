@@ -10,7 +10,13 @@ export const NotFoundPage: React.FC = () => {
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-16">
       <div className="max-w-md w-full text-center space-y-6">
-        <span className="font-serif text-8xl font-black text-brand-sage-300 dark:text-brand-sage-800">
+        <div className="flex justify-center">
+          <div className="p-3.5 rounded-3xl bg-white dark:bg-white/95 shadow-md border border-brand-sage-200/60 inline-flex">
+            <img src="/fitnivo-logo.png" alt="FITNIVO" className="h-20 w-auto object-contain" />
+          </div>
+        </div>
+
+        <span className="font-serif text-7xl font-black text-brand-sage-300 dark:text-brand-sage-800">
           404
         </span>
 

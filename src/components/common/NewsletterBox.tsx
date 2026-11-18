@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, CheckCircle2, AlertCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Mail, CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface NewsletterBoxProps {
@@ -73,8 +73,13 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
       <div
         className={`rounded-3xl p-8 md:p-12 text-center bg-white dark:bg-brand-darkCard border border-brand-sage-200 dark:border-brand-sage-800 shadow-soft ${className}`}
       >
-        <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
-          <CheckCircle2 className="w-8 h-8" />
+        <div className="flex justify-center mb-4">
+          <div className="p-3 rounded-2xl bg-white dark:bg-white/95 shadow-sm border border-brand-sage-200/60 inline-flex">
+            <img src="/fitnivo-icon.png" alt="FITNIVO" className="h-10 w-auto object-contain" />
+          </div>
+        </div>
+        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+          <CheckCircle2 className="w-7 h-7" />
         </div>
         <h3 className="font-serif text-2xl md:text-3xl font-bold text-brand-lightText dark:text-brand-darkText mb-2">
           Welcome to the FITNIVO Inner Circle!
@@ -105,8 +110,10 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
       <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-brand-sage-300/20 dark:bg-brand-darkPrimary/10 blur-2xl pointer-events-none" />
 
       <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <div className="w-4 h-4 rounded-full bg-white dark:bg-white/95 p-0.5 flex items-center justify-center">
+            <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
+          </div>
           <span>Curated Wellness Digest</span>
         </div>
 

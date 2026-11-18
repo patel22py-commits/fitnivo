@@ -188,6 +188,11 @@ export const Navbar: React.FC = () => {
         {mobileMenuOpen && (
           <div className="lg:hidden fixed inset-x-0 top-[60px] sm:top-[65px] bottom-0 z-30 bg-white/98 dark:bg-brand-darkBg/98 backdrop-blur-xl border-t border-brand-sage-200/80 dark:border-brand-sage-800 p-6 flex flex-col justify-between overflow-y-auto animate-in slide-in-from-top-2 duration-200">
             <div className="space-y-4">
+              {/* Brand Logo in Drawer */}
+              <div className="pb-3 border-b border-brand-sage-100 dark:border-brand-sage-800 flex items-center justify-between">
+                <Logo size="md" showTagline={true} />
+              </div>
+
               <span className="text-xs font-bold uppercase tracking-wider text-brand-sage-600 dark:text-brand-darkMuted px-2 flex items-center gap-1.5">
                 <Heart className="w-3.5 h-3.5 text-brand-lightPrimary" />
                 <span>Wellness Focus Areas</span>

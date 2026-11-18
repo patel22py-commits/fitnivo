@@ -257,13 +257,18 @@ export const ContactPage: React.FC = () => {
           {/* Right Column: Contact Details & Social Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             <div className="p-8 rounded-3xl bg-brand-sage-50/70 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-6">
-              <div className="space-y-1">
-                <h3 className="font-serif text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
-                  Editorial Headquarters
-                </h3>
-                <p className="text-xs text-brand-sage-500 dark:text-brand-darkMuted">
-                  FITNIVO Media Group – New York &amp; Austin
-                </p>
+              <div className="flex items-center gap-3.5 pb-2 border-b border-brand-sage-200/60 dark:border-brand-sage-800">
+                <div className="p-2 rounded-2xl bg-white dark:bg-white/95 shadow-sm border border-brand-sage-200/60 shrink-0">
+                  <img src="/fitnivo-icon.png" alt="FITNIVO" className="h-10 w-auto object-contain" />
+                </div>
+                <div className="space-y-0.5">
+                  <h3 className="font-serif text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
+                    Editorial Headquarters
+                  </h3>
+                  <p className="text-xs text-brand-sage-500 dark:text-brand-darkMuted">
+                    FITNIVO Media Group – Official Desk
+                  </p>
+                </div>
               </div>
 
               <div className="space-y-4 text-sm text-brand-lightText/80 dark:text-brand-darkMuted">

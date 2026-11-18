@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
           
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <Logo size="lg" showTagline={true} />
+            <Logo size="lg" showTagline={true} variant="badge" />
             <p className="text-xs sm:text-sm text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed max-w-sm">
               FITNIVO is an American women&apos;s wellness and lifestyle platform dedicated to evidence-informed health knowledge, sustainable fitness, nourishing recipes, and mindful daily self-care.
             </p>

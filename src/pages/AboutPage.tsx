@@ -91,6 +91,33 @@ export const AboutPage: React.FC = () => {
           </div>
         </div>
 
+        {/* Brand Identity & Official Logo Showcase */}
+        <section className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-4 flex justify-center">
+              <div className="p-6 rounded-3xl bg-[#FFF8F9] dark:bg-white/95 shadow-md border border-brand-sage-200/70 inline-flex flex-col items-center">
+                <img
+                  src="/fitnivo-logo.png"
+                  alt="FITNIVO Brand Wordmark and Leaf Emblem"
+                  className="h-28 sm:h-32 w-auto object-contain"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-8 space-y-3 text-center md:text-left">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
+                <Heart className="w-3.5 h-3.5" />
+                <span>Our Visual Identity</span>
+              </span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-brand-lightText dark:text-brand-darkText">
+                The FITNIVO Symbol &amp; Philosophy
+              </h3>
+              <p className="text-xs sm:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
+                The FITNIVO emblem captures the spirit of modern women&apos;s wellness: an active human figure reaching upward in health and confidence, balanced by steady growth bars and embraced by the vibrant green leaf of botanical nourishment and natural harmony.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* 6 Pillars */}
         <section className="space-y-8">
           <div className="max-w-2xl space-y-2">

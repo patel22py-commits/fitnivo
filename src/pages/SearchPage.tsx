@@ -80,6 +80,13 @@ export const SearchPage: React.FC = () => {
           <Breadcrumbs items={[{ label: 'Search Protocols' }]} />
 
           <div className="max-w-2xl pt-4 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
+              <div className="w-4 h-4 rounded-full bg-white dark:bg-white/95 p-0.5 flex items-center justify-center shadow-xs">
+                <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
+              </div>
+              <span>FITNIVO Protocol Finder</span>
+            </div>
+
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight">
               Search Wellness Protocols
             </h1>

@@ -24,8 +24,8 @@ export const App: React.FC = () => {
           {/* Sticky Navigation Header */}
           <Navbar />
 
-          {/* Main Page Content - padded at bottom on mobile to accommodate MobileBottomBar */}
-          <main className="flex-1 pb-16 lg:pb-0">
+          {/* Main Page Content */}
+          <main className="flex-1">
             <Routes>
               {/* 1. Homepage */}
               <Route path="/" element={<HomePage />} />

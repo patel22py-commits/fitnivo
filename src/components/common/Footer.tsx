@@ -9,9 +9,9 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="mt-16 sm:mt-20 border-t border-brand-sage-200/80 dark:border-brand-sage-800 bg-[#FDF0F3] dark:bg-brand-darkBgSecondary text-brand-lightText dark:text-brand-darkText transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-24 lg:pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-12 border-b border-brand-sage-200/70 dark:border-brand-sage-800/80">
+    <footer className="mt-3 sm:mt-6 border-t border-brand-sage-200/80 dark:border-brand-sage-800 bg-[#FDF0F3] dark:bg-brand-darkBgSecondary text-brand-lightText dark:text-brand-darkText transition-colors duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 pb-20 lg:pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 pb-5 sm:pb-7 border-b border-brand-sage-200/70 dark:border-brand-sage-800/80">
           
           {/* Column 1: Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
+        <div className="pt-4 sm:pt-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
           <div className="text-center md:text-left">
             <p>© 2026 FITNIVO. All Rights Reserved. Feel Better. Live Healthier.</p>
             <p className="mt-1 text-[11px] text-brand-sage-500">

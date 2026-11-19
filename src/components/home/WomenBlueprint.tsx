@@ -90,31 +90,31 @@ export const WomenDailyBlueprint: React.FC = () => {
   const Icon = current.icon;
 
   return (
-    <section className="py-6 sm:py-8 md:py-10" aria-labelledby="blueprint-heading">
+    <section className="py-2.5 sm:py-5 md:py-7" aria-labelledby="blueprint-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-3 mb-5 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider">
+        <div className="max-w-3xl mx-auto text-center space-y-1.5 sm:space-y-2.5 mb-3.5 sm:mb-6">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-[11px] sm:text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Circadian Rhythm Optimization</span>
           </div>
-          <h2 id="blueprint-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-lightText dark:text-brand-darkText tracking-tight">
+          <h2 id="blueprint-heading" className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-brand-lightText dark:text-brand-darkText tracking-tight">
             The Women&apos;s Daily Wellness Blueprint
           </h2>
-          <p className="text-sm sm:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
             A harmonious 24-hour routine designed to align with female endocrine rhythms and cellular vitality.
           </p>
         </div>
 
         {/* Tab Buttons (Thumb friendly on mobile) */}
-        <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8">
+        <div className="flex items-center justify-center gap-1.5 sm:gap-4 mb-4 sm:mb-6">
           <button
             type="button"
             onClick={() => setActiveTab('morning')}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 py-3 px-4 sm:px-6 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 sm:gap-2 py-2 px-2.5 sm:py-3 sm:px-6 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
               activeTab === 'morning'
-                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-105'
+                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-102 sm:scale-105'
                 : 'bg-white dark:bg-brand-darkCard text-brand-lightText dark:text-brand-darkMuted border border-brand-sage-200/80 dark:border-brand-sage-800 hover:bg-brand-sage-50'
             }`}
           >
@@ -125,9 +125,9 @@ export const WomenDailyBlueprint: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTab('midday')}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 py-3 px-4 sm:px-6 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 sm:gap-2 py-2 px-2.5 sm:py-3 sm:px-6 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
               activeTab === 'midday'
-                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-105'
+                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-102 sm:scale-105'
                 : 'bg-white dark:bg-brand-darkCard text-brand-lightText dark:text-brand-darkMuted border border-brand-sage-200/80 dark:border-brand-sage-800 hover:bg-brand-sage-50'
             }`}
           >
@@ -138,9 +138,9 @@ export const WomenDailyBlueprint: React.FC = () => {
           <button
             type="button"
             onClick={() => setActiveTab('evening')}
-            className={`flex-1 sm:flex-initial flex items-center justify-center gap-2 py-3 px-4 sm:px-6 rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex-1 sm:flex-initial flex items-center justify-center gap-1.5 sm:gap-2 py-2 px-2.5 sm:py-3 sm:px-6 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold transition-all ${
               activeTab === 'evening'
-                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-105'
+                ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-soft scale-102 sm:scale-105'
                 : 'bg-white dark:bg-brand-darkCard text-brand-lightText dark:text-brand-darkMuted border border-brand-sage-200/80 dark:border-brand-sage-800 hover:bg-brand-sage-50'
             }`}
           >
@@ -150,17 +150,17 @@ export const WomenDailyBlueprint: React.FC = () => {
         </div>
 
         {/* Tab Content Box */}
-        <div className="rounded-3xl p-6 sm:p-10 bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-6">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-brand-sage-100 dark:border-brand-sage-800/80 gap-3">
-            <div className="flex items-center gap-3">
-              <div className="p-3 rounded-2xl bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary">
-                <Icon className="w-6 h-6" />
+        <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-8 bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-4 sm:space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 sm:pb-4 border-b border-brand-sage-100 dark:border-brand-sage-800/80 gap-2 sm:gap-3">
+            <div className="flex items-center gap-2.5 sm:gap-3">
+              <div className="p-2 sm:p-3 rounded-xl sm:rounded-2xl bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0">
+                <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary block">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary block">
                   {current.time}
                 </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-brand-lightText dark:text-brand-darkText">
                   {current.title}
                 </h3>
               </div>

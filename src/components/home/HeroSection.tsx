@@ -4,89 +4,89 @@ import { ArrowRight, Sparkles, ShieldCheck, Heart } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative overflow-hidden pt-2 pb-6 sm:pt-4 sm:pb-8 md:pt-6 md:pb-10">
+    <section className="relative overflow-hidden pt-1 pb-3 sm:pt-3 sm:pb-5 md:pt-5 md:pb-7">
       {/* Background romantic rose ambient glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[600px] h-[320px] sm:h-[400px] bg-brand-blush-300/35 dark:bg-brand-sage-900/25 blur-3xl rounded-full pointer-events-none" />
-      <div className="absolute top-8 right-6 w-48 sm:w-80 h-48 sm:h-80 bg-rose-200/40 dark:bg-brand-darkPrimary/15 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] sm:w-[600px] h-[280px] sm:h-[400px] bg-brand-blush-300/35 dark:bg-brand-sage-900/25 blur-3xl rounded-full pointer-events-none" />
+      <div className="absolute top-8 right-6 w-40 sm:w-80 h-40 sm:h-80 bg-rose-200/40 dark:bg-brand-darkPrimary/15 blur-3xl rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
           
           {/* Left Column: Editorial Headline & Copy (7 cols) */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 border border-brand-sage-200 dark:border-brand-sage-700/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-widest shadow-sm">
+          <div className="lg:col-span-7 space-y-3.5 sm:space-y-5 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 border border-brand-sage-200 dark:border-brand-sage-700/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-[11px] sm:text-xs font-semibold uppercase tracking-widest shadow-sm">
               <div className="w-4 h-4 rounded-full bg-white dark:bg-white/95 p-0.5 flex items-center justify-center shadow-xs">
                 <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
               </div>
               <span>FITNIVO • Feel Better. Live Healthier.</span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight leading-[1.15]">
+            <h1 className="font-serif text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight leading-[1.15]">
               Your Health. <br />
               <span className="italic font-normal text-brand-sage-500 dark:text-brand-darkPrimary">Your Journey.</span> <br />
               Your Best Self.
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed max-w-xl mx-auto lg:mx-0">
+            <p className="text-xs sm:text-base md:text-lg text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed max-w-xl mx-auto lg:mx-0">
               Discover practical wellness advice, healthy recipes, fitness inspiration, and everyday tips designed to help women feel confident and live healthier.
             </p>
 
             {/* Mobile-First Touch-Friendly CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
+            <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
               <Link
                 to="/womens-health"
-                className="px-8 py-3.5 sm:py-4 rounded-full bg-brand-lightPrimary dark:bg-brand-darkPrimary text-white dark:text-brand-darkBg font-semibold text-sm sm:text-base shadow-soft hover:shadow-soft-lg hover:bg-brand-sage-700 dark:hover:bg-brand-sage-300 transition-all duration-200 flex items-center justify-center gap-2 group active:scale-95"
+                className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-full bg-brand-lightPrimary dark:bg-brand-darkPrimary text-white dark:text-brand-darkBg font-semibold text-xs sm:text-sm shadow-soft hover:shadow-soft-lg hover:bg-brand-sage-700 dark:hover:bg-brand-sage-300 transition-all duration-200 flex items-center justify-center gap-2 group active:scale-95"
               >
                 <span>Explore Wellness</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </Link>
 
               <Link
                 to="/lifestyle"
-                className="px-8 py-3.5 sm:py-4 rounded-full bg-white dark:bg-brand-darkCard text-brand-lightPrimary dark:text-brand-darkText border border-brand-sage-300 dark:border-brand-sage-700 font-semibold text-sm sm:text-base hover:bg-brand-sage-50 dark:hover:bg-brand-darkBgSecondary transition-all duration-200 flex items-center justify-center active:scale-95"
+                className="w-full sm:w-auto px-6 py-3 sm:py-3.5 rounded-full bg-white dark:bg-brand-darkCard text-brand-lightPrimary dark:text-brand-darkText border border-brand-sage-300 dark:border-brand-sage-700 font-semibold text-xs sm:text-sm hover:bg-brand-sage-50 dark:hover:bg-brand-darkBgSecondary transition-all duration-200 flex items-center justify-center active:scale-95"
               >
                 Discover Healthy Living
               </Link>
             </div>
 
             {/* Trust Highlights */}
-            <div className="pt-4 sm:pt-6 border-t border-brand-sage-200/60 dark:border-brand-sage-800/80 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-lg mx-auto lg:mx-0 text-left">
-              <div className="flex items-center gap-2 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
-                <ShieldCheck className="w-4 h-4 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
+            <div className="pt-2.5 sm:pt-4 border-t border-brand-sage-200/60 dark:border-brand-sage-800/80 grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-w-lg mx-auto lg:mx-0 text-left">
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-brand-sage-600 dark:text-brand-darkMuted">
+                <ShieldCheck className="w-3.5 h-3.5 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
                 <span>Evidence-informed</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-brand-sage-600 dark:text-brand-darkMuted">
-                <Heart className="w-4 h-4 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-brand-sage-600 dark:text-brand-darkMuted">
+                <Heart className="w-3.5 h-3.5 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
                 <span>Zero crash diets</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-brand-sage-600 dark:text-brand-darkMuted col-span-2 sm:col-span-1">
-                <Sparkles className="w-4 h-4 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
+              <div className="flex items-center gap-1.5 text-[11px] sm:text-xs text-brand-sage-600 dark:text-brand-darkMuted col-span-2 sm:col-span-1">
+                <Sparkles className="w-3.5 h-3.5 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0" />
                 <span>Curated for women</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Hero Visual with editorial lifestyle photograph (5 cols) */}
-          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
-            <div className="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-              {/* Main portrait image */}
-              <div className="relative aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white dark:border-brand-darkCard bg-brand-sage-100 dark:bg-brand-sage-900">
+          <div className="lg:col-span-5 relative mt-2 lg:mt-0">
+            <div className="relative mx-auto max-w-xs sm:max-w-sm lg:max-w-none">
+              {/* Main portrait image - Mobile-optimized aspect ratio */}
+              <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-[2.2rem] overflow-hidden shadow-xl border-3 sm:border-4 border-white dark:border-brand-darkCard bg-brand-sage-100 dark:bg-brand-sage-900">
                 <img
                   src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1000&q=85"
                   alt="Confident woman enjoying mindful morning wellness ritual"
                   className="w-full h-full object-cover object-top"
                   fetchPriority="high"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2C0D1B]/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2C0D1B]/55 via-transparent to-transparent" />
                 
                 {/* Embedded Quote / Stat Overlay */}
-                <div className="absolute bottom-4 inset-x-4 sm:bottom-6 sm:inset-x-6 p-3.5 sm:p-4 rounded-2xl bg-white/90 dark:bg-brand-darkBg/90 backdrop-blur-md shadow-lg border border-white/30">
-                  <p className="font-serif italic text-xs sm:text-sm text-brand-lightPrimary dark:text-brand-darkText">
+                <div className="absolute bottom-2.5 inset-x-2.5 sm:bottom-5 sm:inset-x-5 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-white/90 dark:bg-brand-darkBg/90 backdrop-blur-md shadow-md border border-white/30">
+                  <p className="font-serif italic text-[11px] sm:text-xs text-brand-lightPrimary dark:text-brand-darkText line-clamp-2">
                     &ldquo;Health is not an all-or-nothing contest. It is the steady accumulation of small daily kindnesses to yourself.&rdquo;
                   </p>
-                  <div className="flex items-center gap-1.5 mt-1.5">
-                    <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-3.5 h-3.5 object-contain" />
-                    <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-brand-sage-500 dark:text-brand-darkMuted">
+                  <div className="flex items-center gap-1.5 mt-1">
+                    <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-3 h-3 object-contain" />
+                    <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider text-brand-sage-500 dark:text-brand-darkMuted">
                       FITNIVO Daily Philosophy
                     </span>
                   </div>
@@ -94,36 +94,24 @@ export const HeroSection: React.FC = () => {
               </div>
 
               {/* Floating Official Brand Seal */}
-              <div className="absolute -bottom-3 -right-2 sm:-bottom-4 sm:-right-4 px-3.5 py-2 rounded-2xl bg-white dark:bg-brand-darkCard shadow-soft-lg border border-brand-sage-200 dark:border-brand-sage-700 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-white dark:bg-white/95 p-1 flex items-center justify-center shadow-xs border border-brand-sage-100">
+              <div className="absolute -bottom-2 right-1 sm:-bottom-3 sm:-right-3 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl sm:rounded-2xl bg-white dark:bg-brand-darkCard shadow-soft border border-brand-sage-200 dark:border-brand-sage-700 flex items-center gap-1.5 sm:gap-2">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg sm:rounded-xl bg-white dark:bg-white/95 p-0.5 flex items-center justify-center shadow-xs border border-brand-sage-100">
                   <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
                 </div>
-                <div className="text-xs">
+                <div className="text-[10px] sm:text-xs">
                   <span className="font-bold block text-brand-lightPrimary dark:text-brand-darkPrimary">FITNIVO™</span>
-                  <span className="text-brand-sage-500 text-[10px]">Women's Wellness</span>
+                  <span className="text-brand-sage-500 text-[9px]">Women's Wellness</span>
                 </div>
               </div>
 
               {/* Floating pill badge 1 */}
-              <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-6 px-3.5 py-2 rounded-2xl bg-white dark:bg-brand-darkCard shadow-soft-lg border border-brand-sage-200 dark:border-brand-sage-700 flex items-center gap-2">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-brand-blush-200 dark:bg-brand-sage-900 text-brand-lightPrimary dark:text-brand-darkPrimary flex items-center justify-center font-bold text-xs">
+              <div className="absolute -top-2 left-1 sm:-top-3 sm:-left-3 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl sm:rounded-2xl bg-white dark:bg-brand-darkCard shadow-soft border border-brand-sage-200 dark:border-brand-sage-700 flex items-center gap-1.5">
+                <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-brand-blush-200 dark:bg-brand-sage-900 text-brand-lightPrimary dark:text-brand-darkPrimary flex items-center justify-center font-bold text-[10px]">
                   25g+
                 </div>
-                <div className="text-xs">
+                <div className="text-[10px] sm:text-xs">
                   <span className="font-bold block text-brand-lightText dark:text-brand-darkText">High Protein</span>
-                  <span className="text-brand-sage-500 text-[10px]">Morning Fuel</span>
-                </div>
-              </div>
-
-              {/* Floating pill badge 2 */}
-              <div className="absolute top-1/2 -right-2 sm:-right-4 translate-y-4 px-3.5 py-2 rounded-2xl bg-white dark:bg-brand-darkCard shadow-soft-lg border border-brand-sage-200 dark:border-brand-sage-700 flex items-center gap-2">
-                <span className="flex h-2.5 w-2.5 relative">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
-                </span>
-                <div className="text-xs">
-                  <span className="font-bold block text-brand-lightText dark:text-brand-darkText">250K+ Women</span>
-                  <span className="text-brand-sage-500 text-[10px]">Empowered Daily</span>
+                  <span className="text-brand-sage-500 text-[9px]">Morning Fuel</span>
                 </div>
               </div>
             </div>

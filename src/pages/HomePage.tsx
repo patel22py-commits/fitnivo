@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
       <InspirationSection />
 
       {/* 6. Working Newsletter Community Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:pt-6 sm:pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-5 md:py-7">
         <NewsletterBox variant="banner" />
       </div>
     </div>

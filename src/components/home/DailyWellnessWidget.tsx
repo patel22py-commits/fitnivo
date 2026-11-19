@@ -27,19 +27,19 @@ export const DailyWellnessWidget: React.FC = () => {
   };
 
   return (
-    <section className="py-6 sm:py-8 md:py-10" aria-labelledby="interactive-wellness-heading">
+    <section className="py-2.5 sm:py-5 md:py-7" aria-labelledby="interactive-wellness-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl p-5 sm:p-8 md:p-12 bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft">
+        <div className="rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
             {/* Left Column: Interactive Calculator (6 cols) */}
-            <div className="lg:col-span-6 space-y-5 sm:space-y-6">
-              <div className="space-y-2">
-                <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary">
+            <div className="lg:col-span-6 space-y-4 sm:space-y-5">
+              <div className="space-y-1.5">
+                <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-brand-lightPrimary dark:text-brand-darkPrimary">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>Interactive Wellness Tool</span>
                 </div>
-                <h3 id="interactive-wellness-heading" className="font-serif text-2xl sm:text-3xl font-bold text-brand-lightText dark:text-brand-darkText">
+                <h3 id="interactive-wellness-heading" className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-brand-lightText dark:text-brand-darkText">
                   Personalize Your Daily Nutrition Benchmarks
                 </h3>
                 <p className="text-xs sm:text-sm text-brand-lightText/70 dark:text-brand-darkMuted leading-relaxed">
@@ -103,26 +103,26 @@ export const DailyWellnessWidget: React.FC = () => {
                 </div>
 
                 {/* Benchmark Output Badges */}
-                <div className="grid grid-cols-2 gap-3 pt-2">
-                  <div className="p-4 rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 text-brand-lightPrimary dark:text-brand-darkPrimary">
-                      <Dumbbell className="w-5 h-5" />
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3 pt-1">
+                  <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 flex items-center gap-2.5 sm:gap-3">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 text-brand-lightPrimary dark:text-brand-darkPrimary shrink-0">
+                      <Dumbbell className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] sm:text-[11px] text-brand-sage-600 dark:text-brand-darkMuted block font-medium">Daily Protein Target</span>
-                      <span className="text-xl sm:text-2xl font-bold font-serif text-brand-lightPrimary dark:text-brand-darkPrimary">
+                      <span className="text-[10px] sm:text-[11px] text-brand-sage-600 dark:text-brand-darkMuted block font-medium">Protein Target</span>
+                      <span className="text-lg sm:text-2xl font-bold font-serif text-brand-lightPrimary dark:text-brand-darkPrimary">
                         ~{proteinTarget}g
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-4 rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 flex items-center gap-3">
-                    <div className="p-2.5 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400">
-                      <Droplets className="w-5 h-5" />
+                  <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary border border-brand-sage-200/80 dark:border-brand-sage-800 flex items-center gap-2.5 sm:gap-3">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-rose-500/10 text-rose-600 dark:text-rose-400 shrink-0">
+                      <Droplets className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] sm:text-[11px] text-brand-sage-600 dark:text-brand-darkMuted block font-medium">Optimal Fluid Target</span>
-                      <span className="text-xl sm:text-2xl font-bold font-serif text-brand-lightPrimary dark:text-brand-darkPrimary">
+                      <span className="text-[10px] sm:text-[11px] text-brand-sage-600 dark:text-brand-darkMuted block font-medium">Fluid Target</span>
+                      <span className="text-lg sm:text-2xl font-bold font-serif text-brand-lightPrimary dark:text-brand-darkPrimary">
                         ~{waterTargetOz} oz
                       </span>
                     </div>
@@ -132,7 +132,7 @@ export const DailyWellnessWidget: React.FC = () => {
             </div>
 
             {/* Right Column: Daily Wellness Micro-Checklist (6 cols) */}
-            <div className="lg:col-span-6 bg-brand-sage-50/70 dark:bg-brand-darkBgSecondary p-5 sm:p-7 rounded-3xl border border-brand-sage-200/80 dark:border-brand-sage-800 space-y-4">
+            <div className="lg:col-span-6 bg-brand-sage-50/70 dark:bg-brand-darkBgSecondary p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-brand-sage-200/80 dark:border-brand-sage-800 space-y-3">
               <div className="flex items-center justify-between">
                 <div>
                   <h4 className="font-serif font-bold text-lg text-brand-lightText dark:text-brand-darkText">

@@ -103,31 +103,31 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
   return (
     <section
       aria-label="Newsletter Signup"
-      className={`relative overflow-hidden rounded-3xl p-6 sm:p-8 md:p-10 bg-gradient-to-br from-brand-sage-50 via-white to-brand-blush-50 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border border-brand-sage-200/70 dark:border-brand-sage-800/80 shadow-soft ${className}`}
+      className={`relative overflow-hidden rounded-2xl sm:rounded-3xl p-4 sm:p-7 md:p-9 bg-gradient-to-br from-brand-sage-50 via-white to-brand-blush-50 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border border-brand-sage-200/70 dark:border-brand-sage-800/80 shadow-soft ${className}`}
     >
       {/* Decorative leaf watermarks */}
       <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-brand-lightAccent/20 dark:bg-brand-sage-800/20 blur-2xl pointer-events-none" />
       <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-brand-sage-300/20 dark:bg-brand-darkPrimary/10 blur-2xl pointer-events-none" />
 
-      <div className="relative z-10 max-w-2xl mx-auto text-center space-y-4">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-semibold uppercase tracking-wider shadow-xs">
+      <div className="relative z-10 max-w-2xl mx-auto text-center space-y-3 sm:space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-sage-100 dark:bg-brand-sage-900/60 text-brand-lightPrimary dark:text-brand-darkPrimary text-[11px] sm:text-xs font-semibold uppercase tracking-wider shadow-xs">
           <div className="w-4 h-4 rounded-full bg-white dark:bg-white/95 p-0.5 flex items-center justify-center">
             <img src="/fitnivo-icon.png" alt="FITNIVO" className="w-full h-full object-contain" />
           </div>
           <span>Curated Wellness Digest</span>
         </div>
 
-        <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight">
+        <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-brand-lightPrimary dark:text-brand-darkText tracking-tight">
           Your Weekly Dose of Wellness
         </h2>
 
-        <p className="text-sm sm:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed max-w-xl mx-auto">
+        <p className="text-xs sm:text-sm md:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed max-w-xl mx-auto">
           Get helpful women&apos;s health tips, healthy recipes, fitness inspiration, and wellness ideas delivered straight to your inbox.
         </p>
 
         {/* Frequency selector */}
-        <div className="flex items-center justify-center gap-2 pt-2">
-          <span className="text-xs text-brand-sage-600 dark:text-brand-darkMuted">Delivery frequency:</span>
+        <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-1 sm:pt-2">
+          <span className="text-[11px] sm:text-xs text-brand-sage-600 dark:text-brand-darkMuted w-full sm:w-auto">Delivery frequency:</span>
           <button
             type="button"
             onClick={() => setFrequency('weekly')}
@@ -137,7 +137,7 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
                 : 'bg-brand-sage-100 dark:bg-brand-sage-900/40 text-brand-lightText dark:text-brand-darkText'
             }`}
           >
-            Weekly Sunday Edition
+            Weekly Edition
           </button>
           <button
             type="button"
@@ -148,7 +148,7 @@ export const NewsletterBox: React.FC<NewsletterBoxProps> = ({
                 : 'bg-brand-sage-100 dark:bg-brand-sage-900/40 text-brand-lightText dark:text-brand-darkText'
             }`}
           >
-            Daily Morning Bite
+            Daily Morning
           </button>
         </div>
 

@@ -37,35 +37,35 @@ export const InspirationSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-6 sm:py-8 md:py-10 bg-gradient-to-b from-transparent via-brand-sage-50/50 to-transparent dark:via-brand-darkBgSecondary/30" aria-labelledby="inspiration-heading">
+    <section className="py-2.5 sm:py-5 md:py-7 bg-gradient-to-b from-transparent via-brand-sage-50/50 to-transparent dark:via-brand-darkBgSecondary/30" aria-labelledby="inspiration-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mx-auto text-center space-y-3 mb-5 sm:mb-8">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary">
+        <div className="max-w-2xl mx-auto text-center space-y-1 sm:space-y-2 mb-3.5 sm:mb-6">
+          <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-widest text-brand-lightPrimary dark:text-brand-darkPrimary">
             Daily Foundations
           </span>
-          <h2 id="inspiration-heading" className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-brand-lightText dark:text-brand-darkText tracking-tight">
+          <h2 id="inspiration-heading" className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-brand-lightText dark:text-brand-darkText tracking-tight">
             Small Steps. Healthier You.
           </h2>
-          <p className="text-sm sm:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
             Elevate your day-to-day vitality through the three timeless pillars of sustainable women&apos;s wellness.
           </p>
         </div>
 
         {/* 3 Attractive Feature Cards - Mobile Friendly Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 sm:gap-6">
           {cards.map((card, index) => {
             const Icon = card.icon;
 
             return (
               <div
                 key={index}
-                className="group relative rounded-3xl overflow-hidden bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft hover:shadow-soft-lg transition-all duration-300 card-hover-effect flex flex-col justify-between"
+                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft hover:shadow-soft-lg transition-all duration-300 card-hover-effect flex flex-col justify-between"
               >
                 <div>
                   {/* Visual Banner */}
-                  <div className="relative aspect-[16/10] overflow-hidden">
+                  <div className="relative aspect-[16/9] sm:aspect-[16/10] overflow-hidden">
                     <img
                       src={card.image}
                       alt={card.title}
@@ -74,27 +74,27 @@ export const InspirationSection: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#2C0D1B]/80 via-black/25 to-transparent" />
                     
-                    <span className="absolute top-4 left-4 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/95 dark:bg-brand-darkCard/95 text-brand-lightPrimary dark:text-brand-darkPrimary backdrop-blur-sm shadow-sm">
+                    <span className="absolute top-3 left-3 sm:top-4 sm:left-4 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-white/95 dark:bg-brand-darkCard/95 text-brand-lightPrimary dark:text-brand-darkPrimary backdrop-blur-sm shadow-sm">
                       {card.badge}
                     </span>
 
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <div className="flex items-center gap-2 mb-1">
-                        <div className="p-1.5 rounded-lg bg-white/20 backdrop-blur-md">
-                          <Icon className="w-4 h-4 text-white" />
+                    <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 text-white">
+                      <div className="flex items-center gap-1.5 sm:gap-2 mb-0.5 sm:mb-1">
+                        <div className="p-1 sm:p-1.5 rounded-lg bg-white/20 backdrop-blur-md">
+                          <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                         </div>
-                        <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                        <h3 className="font-serif text-lg sm:text-2xl font-bold text-white">
                           {card.title}
                         </h3>
                       </div>
-                      <p className="text-xs text-white/80 font-medium">
+                      <p className="text-[11px] sm:text-xs text-white/80 font-medium">
                         {card.subtitle}
                       </p>
                     </div>
                   </div>
 
                   {/* Body description */}
-                  <div className="p-5 sm:p-7">
+                  <div className="p-3.5 sm:p-5">
                     <p className="text-xs sm:text-sm text-brand-lightText/75 dark:text-brand-darkMuted leading-relaxed">
                       {card.description}
                     </p>
@@ -102,10 +102,10 @@ export const InspirationSection: React.FC = () => {
                 </div>
 
                 {/* Footer Link */}
-                <div className="px-5 pb-5 sm:px-7 sm:pb-7">
+                <div className="px-3.5 pb-3.5 sm:px-5 sm:pb-5">
                   <Link
                     to={card.link}
-                    className="w-full py-3 px-4 rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary hover:bg-brand-lightPrimary hover:text-white dark:hover:bg-brand-darkPrimary dark:hover:text-brand-darkBg text-brand-lightPrimary dark:text-brand-darkPrimary font-semibold text-xs tracking-wide uppercase transition-colors duration-200 flex items-center justify-center gap-2 active:scale-95"
+                    className="w-full py-2.5 px-3 rounded-xl sm:rounded-2xl bg-brand-sage-50 dark:bg-brand-darkBgSecondary hover:bg-brand-lightPrimary hover:text-white dark:hover:bg-brand-darkPrimary dark:hover:text-brand-darkBg text-brand-lightPrimary dark:text-brand-darkPrimary font-semibold text-xs tracking-wide uppercase transition-colors duration-200 flex items-center justify-center gap-2 active:scale-95"
                   >
                     <span>{card.actionText}</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

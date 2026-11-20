@@ -46,8 +46,9 @@ export const Navbar: React.FC = () => {
     { name: 'Weight Loss', path: '/weight-loss' },
     { name: 'Nutrition', path: '/nutrition' },
     { name: 'Fitness', path: '/fitness' },
-    { name: 'Beauty', path: '/beauty' },
-    { name: 'Lifestyle', path: '/lifestyle' },
+    { name: 'Beauty & Skincare', path: '/beauty' },
+    { name: 'Hair Care', path: '/hair-care' },
+    { name: 'Lifestyle & Wellness', path: '/lifestyle' },
   ];
 
   return (
@@ -156,6 +157,12 @@ export const Navbar: React.FC = () => {
                         className="block px-3 py-2 text-xs sm:text-sm rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
                       >
                         Beauty &amp; Skincare
+                      </Link>
+                      <Link
+                        to="/hair-care"
+                        className="block px-3 py-2 text-xs sm:text-sm rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                      >
+                        Hair Care
                       </Link>
                       <Link
                         to="/lifestyle"

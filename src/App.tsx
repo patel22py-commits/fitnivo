@@ -52,6 +52,10 @@ export const App: React.FC = () => {
                 element={<CategoryPage forcedSlug="beauty" />}
               />
               <Route
+                path="/hair-care"
+                element={<CategoryPage forcedSlug="hair-care" />}
+              />
+              <Route
                 path="/lifestyle"
                 element={<CategoryPage forcedSlug="lifestyle" />}
               />

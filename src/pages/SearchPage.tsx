@@ -123,7 +123,7 @@ export const SearchPage: React.FC = () => {
                 : 'bg-white dark:bg-brand-darkCard border border-brand-sage-200 dark:border-brand-sage-800 text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100'
             }`}
           >
-            All Pillars (24)
+            All Pillars ({CATEGORIES.reduce((acc, cat) => acc + cat.pillars.length, 0)})
           </button>
           {CATEGORIES.map((cat) => (
             <button

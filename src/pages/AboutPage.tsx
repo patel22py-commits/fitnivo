@@ -32,6 +32,10 @@ export const AboutPage: React.FC = () => {
       desc: 'Science-backed skincare barrier preservation, sun protection, non-toxic formulations, and self-honoring beauty rituals.'
     },
     {
+      title: 'Hair Care',
+      desc: 'Nurturing scalp microbiome balance, heat defense, damage repair, and sustainable hair growth rituals for every texture.'
+    },
+    {
       title: 'Healthy Lifestyle',
       desc: 'Nurturing restorative sleep, circadian light exposure, stress regulation, and emotional balance in a hectic modern world.'
     }
@@ -125,7 +129,7 @@ export const AboutPage: React.FC = () => {
               What We Cover
             </span>
             <h2 className="font-serif text-3xl font-bold text-brand-lightText dark:text-brand-darkText">
-              The Six Pillars of FITNIVO
+              The Core Pillars of FITNIVO
             </h2>
           </div>
 

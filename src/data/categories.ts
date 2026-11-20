@@ -512,6 +512,91 @@ export const CATEGORIES: CategoryDetail[] = [
       { question: 'Why does morning sunlight matter more than indoor lighting?', answer: 'Outdoor sunlight produces 3,000 to 100,000+ lux of light even on cloudy days, compared to only 200-500 lux from indoor bulbs. Your retinal ganglion cells require this intensity to synchronize your circadian clock.' },
       { question: 'How can busy moms or working professionals find time for self-care?', answer: 'Reframe self-care as micro-rituals: a 2-minute intentional breath before opening your car door, drinking a glass of water without checking your phone, or taking three conscious deep breaths between meetings.' }
     ]
+  },
+  {
+    id: 'hair-care',
+    name: 'Hair Care',
+    slug: 'hair-care',
+    description: 'Evidence-based hair health, scalp microbiome care, heat defense, damage repair, and holistic hair growth rituals.',
+    tagline: 'Nurturing strong, radiant hair from root to tip through gentle science.',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80',
+    badge: 'Scalp & Follicle Care',
+    pillarsCount: 4,
+    takeaways: [
+      'Hair vitality originates in the scalp microbiome; treat your scalp with the same gentle care as facial skin.',
+      'Balancing moisture (humectants) with structural protein (hydrolyzed keratin) prevents chronic breakage.',
+      'Thermal tools must always be paired with a heat protectant barrier up to 450°F to prevent cuticle blistering.',
+      'Optimal serum ferritin (>50 ng/mL), vitamin D3, and dietary protein are primary drivers of active hair growth.'
+    ],
+    pillars: [
+      {
+        id: 'scalp-microbiome-cleansing',
+        title: 'Scalp Microbiome & Cleansing',
+        subtitle: 'Restoring the follicular foundation for healthy hair growth',
+        badge: 'Scalp Health',
+        summary: 'Your scalp is an extension of facial skin with a dense sebaceous network and delicate microbiome. Sulfate-heavy cleansers trigger rebound oiliness, while product buildup suffocates follicular openings.',
+        actionSteps: [
+          'Clarify with a gentle salicylic acid or botanical scalp scrub once weekly to dissolve sebum plugs.',
+          'Use sulfate-free, pH-balanced shampoos (pH 4.5–5.5) to keep hair cuticles flat and sealed.',
+          'Perform a 3-minute circular scalp massage with your fingertips in the shower to stimulate micro-capillary flow.'
+        ],
+        scientificRationale: 'Micro-capillary perfusion to the dermal papilla directly correlates with cellular proliferation in the hair follicle matrix during the anagen growth phase.',
+        proTip: 'Always shampoo your scalp twice with smaller dollops: the first cleanse breaks down surface oils; the second lather purifies the follicles.'
+      },
+      {
+        id: 'hydration-protein-balance',
+        title: 'Moisture vs. Protein Equilibrium',
+        subtitle: 'Diagnosing whether your strands need hydration or structural reinforcement',
+        badge: 'Fiber Architecture',
+        summary: 'Hair fiber consists of 85-90% keratin protein wrapped in a protective lipid cuticle layer. If strands snap with little tension, they have protein overload; if they stretch excessively without bouncing back, they lack protein.',
+        actionSteps: [
+          'Perform the elasticity wet-strand test: gently stretch a single wet strand to assess tensile recoil.',
+          'Incorporate deep conditioning hair masks rich in shea butter, argan oil, and panthenol for deep hydration.',
+          'Apply hydrolyzed silk or quinoa protein treatments once every 3-4 weeks if hair is bleached or heat-styled.'
+        ],
+        scientificRationale: 'Small hydrolyzed protein peptides penetrate the hair cortex through cuticle fissures, temporarily cross-linking with damaged keratin chains.',
+        proTip: 'Always seal in rinse-out deep conditioners with cool water or an acidic leave-in rinse to flatten cuticle scales and maximize shine.'
+      },
+      {
+        id: 'thermal-defense-friction',
+        title: 'Heat Defense & Mechanical Protection',
+        subtitle: 'Preventing cuticle blistering, split ends, and sleep friction',
+        badge: 'Damage Prevention',
+        summary: 'Thermal styling without protection causes water trapped inside the hair cortex to vaporize rapidly, creating irreversible micro-bubbles (bubble hair deformity). Cotton pillowcases also create constant micro-friction while you sleep.',
+        actionSteps: [
+          'Apply a broad-spectrum heat protectant containing dimethicone or polymers before blow-drying or flat-ironing.',
+          'Swap cotton pillowcases for 100% mulberry silk or satin to reduce friction by up to 43% while sleeping.',
+          'Gently squeeze hair with a microfiber towel or cotton t-shirt—never rub aggressively.'
+        ],
+        scientificRationale: 'Dimethicone polymers have extremely low thermal conductivity, slowing heat transfer from irons to the inner keratin cortex.',
+        proTip: 'Never apply hot flat irons to damp hair; the steam expansion causes microscopic fractures along the shaft.'
+      },
+      {
+        id: 'follicular-nutrition-growth',
+        title: 'Internal Nutrition & Telogen Shedding',
+        subtitle: 'Addressing root biological causes of female thinning and shedding',
+        badge: 'Growth Biology',
+        summary: 'Telogen effluvium (sudden hair shedding) is commonly triggered 2 to 4 months after high physiological stress, hormonal shifts (postpartum or perimenopause), or nutritional deficits. Hair follicles are non-essential tissues, so the body halts their nourishment first during metabolic stress.',
+        actionSteps: [
+          'Test serum ferritin levels; optimal levels for active female hair regeneration are typically 50 to 70 ng/mL.',
+          'Consume 1.2 to 1.6 grams of high-quality protein per kilogram of body weight daily.',
+          'Topically massage diluted rosemary oil or peptide serums into the scalp 2 to 3 times weekly.'
+        ],
+        scientificRationale: 'Clinical trials demonstrate that 2% rosemary oil extract produces comparable improvements in hair count to standard hair therapies by blocking local DHT binding without scalp dryness.',
+        proTip: 'Be patient with hair cycles: consistency for 90 to 120 days is required to see new baby hairs at your temples.'
+      }
+    ],
+    dailyChecklist: [
+      { id: 'hc-1', title: 'Gentle wide-tooth comb from ends to roots', timing: 'morning', target: 'Prevent mechanical breakage', benefit: 'Preserves cuticle integrity' },
+      { id: 'hc-2', title: 'Leave-in UV & heat defense mist', timing: 'morning', target: 'Mid-lengths and ends', benefit: 'Environmental barrier' },
+      { id: 'hc-3', title: '2-minute evening fingertip scalp massage', timing: 'evening', target: 'Stimulate follicular microcirculation', benefit: 'Follicular nutrient delivery' },
+      { id: 'hc-4', title: 'Loose silk scrunchie or pineapple wrap', timing: 'evening', target: 'Prevent friction against bedding', benefit: 'Zero morning tangles' }
+    ],
+    faq: [
+      { question: 'How often should women wash their hair?', answer: 'It depends on your scalp sebum production and hair texture. Fine or oily hair generally benefits from washing every 2 days to prevent follicle clogging, while wavy, curly, or coarse textures thrive on washing 1 to 2 times weekly with co-washing in between.' },
+      { question: 'Does rosemary oil really work for thinning hair?', answer: 'Yes. Peer-reviewed clinical research has shown that rosemary oil applied consistently to the scalp stimulates microcapillary circulation and inhibits 5-alpha reductase, performing comparably to standard commercial options without scalp irritation.' },
+      { question: 'Why is my hair shedding excessively several months after stress or illness?', answer: 'This condition is called Telogen Effluvium. A significant physical or emotional stressor causes up to 30% of growing hairs to prematurely enter the resting (telogen) phase. Because this phase lasts about 90 days, shedding peaks 2 to 4 months later. It is almost always temporary and self-resolving with balanced nutrition.' }
+    ]
   }
 ];
 

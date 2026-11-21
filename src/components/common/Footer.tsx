@@ -62,6 +62,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/hair-care/shark-flexstyle-review-2026" className="text-xs text-brand-lightPrimary dark:text-brand-darkPrimary hover:underline transition-colors flex items-center gap-1">
+                  <span>↳ Shark FlexStyle Review 2026</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/lifestyle" className="text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors">
                   Lifestyle &amp; Wellness
                 </Link>

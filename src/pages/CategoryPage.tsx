@@ -12,7 +12,10 @@ import {
   HelpCircle,
   Lightbulb,
   Heart,
-  RotateCcw
+  RotateCcw,
+  Star,
+  ArrowRight,
+  ExternalLink
 } from 'lucide-react';
 
 interface CategoryPageProps {
@@ -99,6 +102,66 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
         {/* Medical disclaimer note for health & weight management categories */}
         {(category.slug === 'womens-health' || category.slug === 'weight-loss') && (
           <MedicalDisclaimer variant="compact" />
+        )}
+
+        {/* Featured Hair Tool Review for Hair Care */}
+        {category.slug === 'hair-care' && (
+          <section className="rounded-3xl overflow-hidden bg-gradient-to-br from-brand-sage-50 via-white to-brand-sage-100/70 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border-2 border-brand-lightPrimary/20 dark:border-brand-darkPrimary/30 shadow-soft-lg p-6 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+              <div className="lg:col-span-5 relative">
+                <div className="rounded-2xl overflow-hidden shadow-md border border-brand-sage-200/80 dark:border-brand-sage-800 bg-brand-sage-100 max-h-80 flex items-center justify-center">
+                  <img
+                    src="/shark-flexstyle-review-2026.jpg"
+                    alt="Shark FlexStyle Review 2026"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-brand-lightPrimary text-white text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Featured Review</span>
+                </span>
+              </div>
+
+              <div className="lg:col-span-7 space-y-3.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full bg-brand-lightPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-bold uppercase tracking-wider">
+                    Hair Tool Review 2026
+                  </span>
+                  <div className="flex items-center gap-1 text-amber-500 font-bold text-xs bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-full border border-amber-200/70 dark:border-amber-800/70">
+                    <Star className="w-3 h-3 fill-current" />
+                    <span>4.4 / 5 (2,283 Reviews)</span>
+                  </div>
+                </div>
+
+                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-brand-lightPrimary dark:text-brand-darkText leading-tight">
+                  Shark FlexStyle Review 2026: Is This Luxury Air Multi-Styler Worth Buying?
+                </h3>
+
+                <p className="text-xs sm:text-sm text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed">
+                  Beautiful salon-style hair without spending hours in front of the mirror. We test the Shark FlexStyle HD440BK with Coanda-inspired auto-wrap curling technology, interchangeable styling attachments, and intelligent heat control.
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/hair-care/shark-flexstyle-review-2026"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-lightPrimary text-white hover:bg-brand-lightSecondary text-xs sm:text-sm font-bold tracking-wide transition-all shadow-soft hover:shadow-soft-lg"
+                  >
+                    <span>Read Full In-Depth Review &amp; Verdict</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href="https://link.amazon/B04YpRTko"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 text-xs sm:text-sm font-semibold text-brand-lightText dark:text-brand-darkText hover:text-brand-lightPrimary transition-colors"
+                  >
+                    <span>Check on Amazon</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
         )}
 
         {/* 1. Key Takeaways Summary Card */}

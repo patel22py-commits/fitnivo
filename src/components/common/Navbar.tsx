@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ChevronDown, Heart } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, Heart, Sparkles } from 'lucide-react';
 import { Logo } from './Logo';
 import { ThemeToggle } from './ThemeToggle';
 import { SearchModal } from './SearchModal';
@@ -150,23 +150,38 @@ export const Navbar: React.FC = () => {
                 </button>
 
                 {lifestyleDropdownOpen && (
-                  <div className="absolute top-full right-0 w-52 pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
+                  <div className="absolute top-full right-0 w-64 pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
                     <div className="rounded-2xl bg-white dark:bg-brand-darkCard shadow-lg border border-brand-sage-200/80 dark:border-brand-sage-800 p-2 space-y-1">
                       <Link
                         to="/beauty"
-                        className="block px-3 py-2 text-xs sm:text-sm rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                        className="block px-3 py-2 text-xs sm:text-sm font-semibold rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
                       >
                         Beauty &amp; Skincare
                       </Link>
-                      <Link
-                        to="/hair-care"
-                        className="block px-3 py-2 text-xs sm:text-sm rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
-                      >
-                        Hair Care
-                      </Link>
+
+                      {/* Hair Care Submenu & Review Blog */}
+                      <div className="rounded-xl bg-brand-sage-50/80 dark:bg-brand-darkBgSecondary/60 p-1.5 space-y-1">
+                        <Link
+                          to="/hair-care"
+                          className="flex items-center justify-between px-2.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-brand-lightText dark:text-brand-darkText hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                        >
+                          <span>Hair Care</span>
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-brand-lightPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary">
+                            Guide
+                          </span>
+                        </Link>
+                        <Link
+                          to="/hair-care/shark-flexstyle-review-2026"
+                          className="flex items-center gap-2 px-2.5 py-1.5 text-xs rounded-lg text-brand-lightPrimary dark:text-brand-darkPrimary hover:bg-white dark:hover:bg-brand-darkCard font-medium transition-all group"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-brand-lightSecondary shrink-0 group-hover:scale-110 transition-transform" />
+                          <span className="truncate">Shark FlexStyle Review 2026</span>
+                        </Link>
+                      </div>
+
                       <Link
                         to="/lifestyle"
-                        className="block px-3 py-2 text-xs sm:text-sm rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                        className="block px-3 py-2 text-xs sm:text-sm font-semibold rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
                       >
                         Lifestyle &amp; Wellness
                       </Link>
@@ -240,20 +255,31 @@ export const Navbar: React.FC = () => {
                   <span>Wellness Navigation</span>
                 </span>
                 {navLinks.map((link) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
-                        isActive
-                          ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-sm'
-                          : 'text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-darkCard'
-                      }`
-                    }
-                  >
-                    <span>{link.name}</span>
-                  </NavLink>
+                  <React.Fragment key={link.path}>
+                    <NavLink
+                      to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold transition-colors ${
+                          isActive
+                            ? 'bg-brand-lightPrimary text-white dark:bg-brand-darkPrimary dark:text-brand-darkBg shadow-sm'
+                            : 'text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-darkCard'
+                        }`
+                      }
+                    >
+                      <span>{link.name}</span>
+                    </NavLink>
+                    {link.path === '/hair-care' && (
+                      <Link
+                        to="/hair-care/shark-flexstyle-review-2026"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="ml-4 flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span className="truncate">Shark FlexStyle Review 2026</span>
+                      </Link>
+                    )}
+                  </React.Fragment>
                 ))}
               </div>
 

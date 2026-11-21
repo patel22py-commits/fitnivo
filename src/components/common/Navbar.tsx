@@ -152,12 +152,25 @@ export const Navbar: React.FC = () => {
                 {lifestyleDropdownOpen && (
                   <div className="absolute top-full right-0 w-64 pt-2 animate-in fade-in slide-in-from-top-1 duration-150">
                     <div className="rounded-2xl bg-white dark:bg-brand-darkCard shadow-lg border border-brand-sage-200/80 dark:border-brand-sage-800 p-2 space-y-1">
-                      <Link
-                        to="/beauty"
-                        className="block px-3 py-2 text-xs sm:text-sm font-semibold rounded-xl text-brand-lightText dark:text-brand-darkText hover:bg-brand-sage-100 dark:hover:bg-brand-sage-900/50 hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
-                      >
-                        Beauty &amp; Skincare
-                      </Link>
+                      {/* Beauty & Skincare Submenu & Review Blog */}
+                      <div className="rounded-xl bg-brand-sage-50/80 dark:bg-brand-darkBgSecondary/60 p-1.5 space-y-1">
+                        <Link
+                          to="/beauty"
+                          className="flex items-center justify-between px-2.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-brand-lightText dark:text-brand-darkText hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                        >
+                          <span>Beauty &amp; Skincare</span>
+                          <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-brand-lightPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary">
+                            Guide
+                          </span>
+                        </Link>
+                        <Link
+                          to="/beauty/shark-cryoglow-review-2026"
+                          className="flex items-center gap-2 px-2.5 py-1.5 text-xs rounded-lg text-brand-lightPrimary dark:text-brand-darkPrimary hover:bg-white dark:hover:bg-brand-darkCard font-medium transition-all group"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-brand-lightSecondary shrink-0 group-hover:scale-110 transition-transform" />
+                          <span className="truncate">Shark CryoGlow Review 2026</span>
+                        </Link>
+                      </div>
 
                       {/* Hair Care Submenu & Review Blog */}
                       <div className="rounded-xl bg-brand-sage-50/80 dark:bg-brand-darkBgSecondary/60 p-1.5 space-y-1">
@@ -269,6 +282,16 @@ export const Navbar: React.FC = () => {
                     >
                       <span>{link.name}</span>
                     </NavLink>
+                    {link.path === '/beauty' && (
+                      <Link
+                        to="/beauty/shark-cryoglow-review-2026"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="ml-4 flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                        <span className="truncate">Shark CryoGlow Review 2026</span>
+                      </Link>
+                    )}
                     {link.path === '/hair-care' && (
                       <Link
                         to="/hair-care/shark-flexstyle-review-2026"

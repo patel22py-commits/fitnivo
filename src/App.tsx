@@ -16,6 +16,7 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { SharkFlexStyleReviewPage } from './pages/SharkFlexStyleReviewPage';
+import { SharkCryoGlowReviewPage } from './pages/SharkCryoGlowReviewPage';
 
 export const App: React.FC = () => {
   return (
@@ -51,6 +52,14 @@ export const App: React.FC = () => {
               <Route
                 path="/beauty"
                 element={<CategoryPage forcedSlug="beauty" />}
+              />
+              <Route
+                path="/beauty/shark-cryoglow-review-2026"
+                element={<SharkCryoGlowReviewPage />}
+              />
+              <Route
+                path="/shark-cryoglow-review-2026"
+                element={<SharkCryoGlowReviewPage />}
               />
               <Route
                 path="/hair-care"

@@ -17,6 +17,7 @@ import { TermsPage } from './pages/TermsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { SharkFlexStyleReviewPage } from './pages/SharkFlexStyleReviewPage';
 import { SharkCryoGlowReviewPage } from './pages/SharkCryoGlowReviewPage';
+import { UlikeAir10ReviewPage } from './pages/UlikeAir10ReviewPage';
 
 export const App: React.FC = () => {
   return (
@@ -60,6 +61,14 @@ export const App: React.FC = () => {
               <Route
                 path="/shark-cryoglow-review-2026"
                 element={<SharkCryoGlowReviewPage />}
+              />
+              <Route
+                path="/beauty/ulike-air-10-review-2026"
+                element={<UlikeAir10ReviewPage />}
+              />
+              <Route
+                path="/ulike-air-10-review-2026"
+                element={<UlikeAir10ReviewPage />}
               />
               <Route
                 path="/hair-care"

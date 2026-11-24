@@ -170,6 +170,13 @@ export const Navbar: React.FC = () => {
                           <Sparkles className="w-3.5 h-3.5 text-brand-lightSecondary shrink-0 group-hover:scale-110 transition-transform" />
                           <span className="truncate">Shark CryoGlow Review 2026</span>
                         </Link>
+                        <Link
+                          to="/beauty/ulike-air-10-review-2026"
+                          className="flex items-center gap-2 px-2.5 py-1.5 text-xs rounded-lg text-brand-lightPrimary dark:text-brand-darkPrimary hover:bg-white dark:hover:bg-brand-darkCard font-medium transition-all group"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 text-brand-lightSecondary shrink-0 group-hover:scale-110 transition-transform" />
+                          <span className="truncate">Ulike Air 10 IPL Review 2026</span>
+                        </Link>
                       </div>
 
                       {/* Hair Care Submenu & Review Blog */}
@@ -283,14 +290,24 @@ export const Navbar: React.FC = () => {
                       <span>{link.name}</span>
                     </NavLink>
                     {link.path === '/beauty' && (
-                      <Link
-                        to="/beauty/shark-cryoglow-review-2026"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="ml-4 flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
-                      >
-                        <Sparkles className="w-3.5 h-3.5 shrink-0" />
-                        <span className="truncate">Shark CryoGlow Review 2026</span>
-                      </Link>
+                      <div className="ml-4 space-y-1">
+                        <Link
+                          to="/beauty/shark-cryoglow-review-2026"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">Shark CryoGlow Review 2026</span>
+                        </Link>
+                        <Link
+                          to="/beauty/ulike-air-10-review-2026"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">Ulike Air 10 IPL Review 2026</span>
+                        </Link>
+                      </div>
                     )}
                     {link.path === '/hair-care' && (
                       <Link

@@ -104,6 +104,56 @@ export const CategoryPage: React.FC<CategoryPageProps> = ({ forcedSlug }) => {
           <MedicalDisclaimer variant="compact" />
         )}
 
+        {/* Featured Women's Health In-Depth Article */}
+        {category.slug === 'womens-health' && (
+          <section className="rounded-3xl overflow-hidden bg-gradient-to-br from-brand-sage-50 via-white to-brand-sage-100/70 dark:from-brand-darkBgSecondary dark:via-brand-darkCard dark:to-brand-darkBg border-2 border-brand-lightPrimary/20 dark:border-brand-darkPrimary/30 shadow-soft-lg p-6 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
+              <div className="lg:col-span-5 relative">
+                <div className="rounded-2xl overflow-hidden shadow-md border border-brand-sage-200/80 dark:border-brand-sage-800 bg-brand-sage-100 max-h-80 flex items-center justify-center">
+                  <img
+                    src="/why-am-i-gaining-weight-eating-less.jpg"
+                    alt="Why Am I Gaining Weight Even When I Eat Less? 7 Reasons"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-brand-lightPrimary text-white text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                  <Sparkles className="w-3 h-3" />
+                  <span>Featured Guide</span>
+                </span>
+              </div>
+
+              <div className="lg:col-span-7 space-y-3.5">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded-full bg-brand-lightPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary text-xs font-bold uppercase tracking-wider">
+                    Hormones &amp; Metabolism
+                  </span>
+                  <span className="text-xs text-brand-sage-700 dark:text-brand-darkMuted font-bold px-2.5 py-0.5 rounded-full bg-brand-sage-100/80 dark:bg-brand-sage-900/60 border border-brand-sage-200/60">
+                    7 Evidence-Informed Insights
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-brand-lightPrimary dark:text-brand-darkText leading-tight">
+                  Why Am I Gaining Weight Even When I Eat Less? 7 Possible Reasons
+                </h3>
+
+                <p className="text-xs sm:text-sm text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed">
+                  Eating less but still gaining weight? You&apos;re not alone. Explore how water retention, hormones (PCOS, thyroid, perimenopause), sleep deprivation, stress cortisol, and NEAT reduction impact female body composition.
+                </p>
+
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/womens-health/why-am-i-gaining-weight-even-when-i-eat-less"
+                    className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-lightPrimary text-white hover:bg-brand-lightSecondary text-xs sm:text-sm font-bold tracking-wide transition-all shadow-soft hover:shadow-soft-lg"
+                  >
+                    <span>Read Full 7-Reason Guide</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* Featured Skincare Tech Reviews for Beauty */}
         {category.slug === 'beauty' && (
           <div className="space-y-6">

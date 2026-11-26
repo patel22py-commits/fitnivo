@@ -18,6 +18,7 @@ import { NotFoundPage } from './pages/NotFoundPage';
 import { SharkFlexStyleReviewPage } from './pages/SharkFlexStyleReviewPage';
 import { SharkCryoGlowReviewPage } from './pages/SharkCryoGlowReviewPage';
 import { UlikeAir10ReviewPage } from './pages/UlikeAir10ReviewPage';
+import { WhyGainingWeightEatingLessPage } from './pages/WhyGainingWeightEatingLessPage';
 
 export const App: React.FC = () => {
   return (
@@ -37,6 +38,14 @@ export const App: React.FC = () => {
               <Route
                 path="/womens-health"
                 element={<CategoryPage forcedSlug="womens-health" />}
+              />
+              <Route
+                path="/womens-health/why-am-i-gaining-weight-even-when-i-eat-less"
+                element={<WhyGainingWeightEatingLessPage />}
+              />
+              <Route
+                path="/why-am-i-gaining-weight-even-when-i-eat-less"
+                element={<WhyGainingWeightEatingLessPage />}
               />
               <Route
                 path="/weight-loss"

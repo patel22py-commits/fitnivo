@@ -11,12 +11,14 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [lifestyleDropdownOpen, setLifestyleDropdownOpen] = useState(false);
+  const [womensHealthDropdownOpen, setWomensHealthDropdownOpen] = useState(false);
   const location = useLocation();
 
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setLifestyleDropdownOpen(false);
+    setWomensHealthDropdownOpen(false);
   }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
@@ -82,18 +84,49 @@ export const Navbar: React.FC = () => {
                 Home
               </NavLink>
 
-              <NavLink
-                to="/womens-health"
-                className={({ isActive }) =>
-                  `px-3 py-2 rounded-full text-xs xl:text-sm font-semibold transition-colors ${
-                    isActive
-                      ? 'text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-sage-100 dark:bg-brand-sage-900/60'
-                      : 'text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary hover:bg-brand-sage-50 dark:hover:bg-brand-darkBgSecondary'
-                  }`
-                }
+              {/* Women's Health Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => setWomensHealthDropdownOpen(true)}
+                onMouseLeave={() => setWomensHealthDropdownOpen(false)}
               >
-                Women&apos;s Health
-              </NavLink>
+                <NavLink
+                  to="/womens-health"
+                  className={({ isActive }) =>
+                    `px-3 py-2 rounded-full text-xs xl:text-sm font-semibold transition-colors inline-flex items-center gap-1 ${
+                      isActive
+                        ? 'text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-sage-100 dark:bg-brand-sage-900/60'
+                        : 'text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary hover:bg-brand-sage-50 dark:hover:bg-brand-darkBgSecondary'
+                    }`
+                  }
+                >
+                  <span>Women&apos;s Health</span>
+                  <ChevronDown className="w-3.5 h-3.5 opacity-60" />
+                </NavLink>
+
+                {womensHealthDropdownOpen && (
+                  <div className="absolute top-full left-0 w-72 pt-2 animate-in fade-in slide-in-from-top-1 duration-150 z-50">
+                    <div className="rounded-2xl bg-white dark:bg-brand-darkCard shadow-lg border border-brand-sage-200/80 dark:border-brand-sage-800 p-2 space-y-1">
+                      <Link
+                        to="/womens-health"
+                        className="flex items-center justify-between px-2.5 py-1.5 text-xs sm:text-sm font-semibold rounded-lg text-brand-lightText dark:text-brand-darkText hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors"
+                      >
+                        <span>Women&apos;s Health Guide</span>
+                        <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-brand-lightPrimary/10 text-brand-lightPrimary dark:text-brand-darkPrimary">
+                          Hub
+                        </span>
+                      </Link>
+                      <Link
+                        to="/womens-health/why-am-i-gaining-weight-even-when-i-eat-less"
+                        className="flex items-center gap-2 px-2.5 py-1.5 text-xs rounded-lg text-brand-lightPrimary dark:text-brand-darkPrimary hover:bg-white dark:hover:bg-brand-darkCard font-medium transition-all group"
+                      >
+                        <Sparkles className="w-3.5 h-3.5 text-brand-lightSecondary shrink-0 group-hover:scale-110 transition-transform" />
+                        <span className="truncate">Why Am I Gaining Weight Eating Less?</span>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               <NavLink
                 to="/weight-loss"
@@ -289,6 +322,18 @@ export const Navbar: React.FC = () => {
                     >
                       <span>{link.name}</span>
                     </NavLink>
+                    {link.path === '/womens-health' && (
+                      <div className="ml-4 space-y-1">
+                        <Link
+                          to="/womens-health/why-am-i-gaining-weight-even-when-i-eat-less"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-medium text-brand-lightPrimary dark:text-brand-darkPrimary bg-brand-lightPrimary/10 dark:bg-brand-darkPrimary/15 hover:bg-brand-lightPrimary/20 transition-colors"
+                        >
+                          <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                          <span className="truncate">Why Am I Gaining Weight Eating Less?</span>
+                        </Link>
+                      </div>
+                    )}
                     {link.path === '/beauty' && (
                       <div className="ml-4 space-y-1">
                         <Link

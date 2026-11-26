@@ -37,6 +37,11 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/womens-health/why-am-i-gaining-weight-even-when-i-eat-less" className="text-xs text-brand-lightPrimary dark:text-brand-darkPrimary hover:underline transition-colors flex items-center gap-1">
+                  <span>↳ Why Am I Gaining Weight Eating Less?</span>
+                </Link>
+              </li>
+              <li>
                 <Link to="/weight-loss" className="text-brand-lightText/80 dark:text-brand-darkMuted hover:text-brand-lightPrimary dark:hover:text-brand-darkPrimary transition-colors">
                   Weight Loss
                 </Link>

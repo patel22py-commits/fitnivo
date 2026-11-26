@@ -18,7 +18,8 @@ import {
   ShieldCheck,
   Droplets,
   Watch,
-  Smartphone
+  Smartphone,
+  ExternalLink
 } from 'lucide-react';
 
 export const WhyGainingWeightEatingLessPage: React.FC = () => {
@@ -289,6 +290,30 @@ export const WhyGainingWeightEatingLessPage: React.FC = () => {
                       <p>{item.callout}</p>
                     </div>
                   )}
+
+                  {/* Affiliate Link 1: Strategic placement under Water Retention vs Body Fat */}
+                  {item.num === '01' && (
+                    <div className="mt-4 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-brand-lightSecondary/15 via-brand-sage-50/70 to-brand-lightPrimary/10 dark:from-brand-sage-900/30 dark:to-brand-darkBgSecondary border border-brand-lightSecondary/30 dark:border-brand-sage-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-1.5 text-xs font-bold text-brand-lightPrimary dark:text-brand-darkPrimary">
+                          <Scale className="w-4 h-4 shrink-0" />
+                          <span>Confused Whether It&apos;s Water Retention or Body Fat?</span>
+                        </div>
+                        <p className="text-xs text-brand-lightText/80 dark:text-brand-darkMuted">
+                          Standard scales cannot differentiate between fluid shifts and fat gain.
+                        </p>
+                      </div>
+                      <a
+                        href="https://link.amazon/B0aL0aj9k"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand-lightPrimary text-white hover:bg-brand-lightSecondary text-xs font-bold transition-all shadow-sm hover:shadow shrink-0 text-center"
+                      >
+                        <span>Stop Guessing About Your Body Composition – Start Tracking It!</span>
+                        <ExternalLink className="w-3.5 h-3.5 shrink-0" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               );
             })}
@@ -352,16 +377,30 @@ export const WhyGainingWeightEatingLessPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-3">
-              <div className="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                <Scale className="w-5 h-5" />
+            {/* Affiliate Link 2: Smart Body Composition Scale tool recommendation card */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-3 flex flex-col justify-between">
+              <div className="space-y-3">
+                <div className="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                  <Scale className="w-5 h-5" />
+                </div>
+                <h4 className="font-serif font-bold text-base text-brand-lightText dark:text-brand-darkText">
+                  1. Smart Body Composition Scale
+                </h4>
+                <p className="text-xs text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed">
+                  Helps track long-term trends in estimated muscle mass and body water percentages rather than pure weight. <em>(Remember: these readings are bioimpedance estimates, not medical diagnoses.)</em>
+                </p>
               </div>
-              <h4 className="font-serif font-bold text-base text-brand-lightText dark:text-brand-darkText">
-                1. Smart Body Composition Scale
-              </h4>
-              <p className="text-xs text-brand-lightText/80 dark:text-brand-darkMuted leading-relaxed">
-                Helps track long-term trends in estimated muscle mass and body water percentages rather than pure weight. <em>(Remember: these readings are bioimpedance estimates, not medical diagnoses.)</em>
-              </p>
+              <div className="pt-2">
+                <a
+                  href="https://link.amazon/B0aL0aj9k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-brand-lightPrimary text-white hover:bg-brand-lightSecondary text-[11px] sm:text-xs font-bold transition-all shadow-sm text-center leading-snug group"
+                >
+                  <span>Stop Guessing About Your Body Composition – Start Tracking It!</span>
+                  <ExternalLink className="w-3 h-3 shrink-0 group-hover:translate-x-0.5 transition-transform" />
+                </a>
+              </div>
             </div>
 
             <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-brand-darkCard border border-brand-sage-200/80 dark:border-brand-sage-800 shadow-soft space-y-3">
@@ -423,6 +462,30 @@ export const WhyGainingWeightEatingLessPage: React.FC = () => {
             <p className="font-serif italic text-base sm:text-lg text-brand-lightPrimary dark:text-brand-darkPrimary font-bold">
               &ldquo;Your health journey should be about feeling healthier, stronger, and more energized—not just seeing a smaller number on the scale.&rdquo;
             </p>
+          </div>
+
+          {/* Affiliate Link 3: High-converting closing recommendation banner */}
+          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-brand-lightPrimary to-brand-lightSecondary text-white text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 shadow-soft">
+            <div className="space-y-1">
+              <span className="text-[11px] font-bold tracking-widest uppercase bg-white/20 px-3 py-1 rounded-full text-white inline-block">
+                Smart Habit Recommendation
+              </span>
+              <h4 className="font-serif text-lg sm:text-xl font-bold text-white pt-1">
+                Stop Letting a Bathroom Scale Deceive You
+              </h4>
+              <p className="text-xs sm:text-sm text-white/90 max-w-xl">
+                Get clarity on your body water, lean muscle mass, and body fat percentage so you never have to guess why the numbers fluctuate.
+              </p>
+            </div>
+            <a
+              href="https://link.amazon/B0aL0aj9k"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-white text-brand-lightPrimary hover:bg-brand-sage-100 font-bold text-xs sm:text-sm shadow-md transition-all shrink-0 text-center"
+            >
+              <span>Stop Guessing About Your Body Composition – Start Tracking It!</span>
+              <ExternalLink className="w-4 h-4 shrink-0" />
+            </a>
           </div>
         </section>
 
